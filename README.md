@@ -1,2 +1,4 @@
 # Poly-Path-Finder
-endless runner
+ Poly Path Finder is a Computer Science-focused educational endless runner game designed for college students and faculty members seeking a supplementary learning solution. The system utilizes the Unity game engine and C# programming. Unity was chosen for its strong mobile game development community and built-in mechanics for endless runner functionality. 
+In this game, the character is running on a three-lane path while answering quiz questions on Computer Science. Players can steer the character to the correct path to make the right choice on a multiple-choice question. The right answers allow the character to continue running, scoring points, while the wrong answers deduct a Heart (life) from the character. There are also varying levels of difficulty in the game, where the speed of the character, the number of lives, and the points scored are varied. This game provides an interesting way to assess what the student has learned.
+
