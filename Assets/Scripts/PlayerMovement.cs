@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     /// This program is responsible for player movement
     /// </summary>
 
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float moveSpeed = 4f;
     [SerializeField] float xPos;
     [SerializeField] float zPos;
     [SerializeField] int trackNumber = 1;
