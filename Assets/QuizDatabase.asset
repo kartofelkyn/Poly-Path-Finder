@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d1f4d3ad0869840a57dbdfe7bd940a, type: 3}
+  m_Name: QuizDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::QuizData
+  quizzes:
+  - question: Which SQL statement is used to retrieve data from a database?
+    answers:
+    - SELECT
+    - UPDATE
+    - DELETE
+    correctIndex: 0
+  - question: Which SQL clause is used to filter records?
+    answers:
+    - ORDER BY
+    - WHERE
+    - GROUP BY
+    correctIndex: 1
+  - question: Which SQL statement is used to remove a table from the database
+    answers:
+    - DROP TABLE
+    - DELETE TABLE
+    - TRUNCATE TABKE
+    correctIndex: 0
