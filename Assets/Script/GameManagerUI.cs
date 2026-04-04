@@ -16,13 +16,15 @@ public class GameManagerUI : MonoBehaviour
     public int lives = 15;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI liveText;
+    string selectedDifficulty = LevelSelection.SelectedDifficulty;
+    public int scoreAdd = 100;
     private void Awake()
     {
         Instance = this;
     }
     public void AddScore(int amount)
     {
-        score += amount;
+        score += amount + scoreAdd;
         UpdateUI();
     }
 
@@ -33,6 +35,28 @@ public class GameManagerUI : MonoBehaviour
         {
             lives = 0;
             Debug.Log("Game Over!");
+        }
+        UpdateUI();
+    }
+
+    void Start()
+    {
+        if (selectedDifficulty == "Hard")
+        {
+            lives = 3;
+            score = 0;
+            scoreAdd = 100;
+        }else if (selectedDifficulty == "Medium")
+        {
+            lives = 5;
+            score = 0;
+            scoreAdd = 50;
+        }
+        else
+        {
+            lives = 8;
+            score = 0;
+            scoreAdd = 0;
         }
         UpdateUI();
     }

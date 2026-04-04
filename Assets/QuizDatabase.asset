@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: QuizDatabase
   m_EditorClassIdentifier: Assembly-CSharp::QuizData
   quizzes:
-  - question: Which SQL statement is used to retrieve data from a database?
+  - question: 'What does SQL stand for?  '
     answers:
+    - 'Structure Query Language  '
+    - 'Sequential Query Language  '
+    - 'Structured Question Language  '
+    correctIndex: 2
+  - question: Which SQL keyword is used to retrieve data from a database?  Which
+      SQL clause is used to filter records?
+    answers:
+    - EXTRACT
     - SELECT
-    - UPDATE
-    - DELETE
-    correctIndex: 0
-  - question: Which SQL clause is used to filter records?
-    answers:
-    - ORDER BY
-    - WHERE
-    - GROUP BY
+    - FETCH
     correctIndex: 1
   - question: Which SQL statement is used to remove a table from the database
     answers:
@@ -31,3 +32,109 @@ MonoBehaviour:
     - DELETE TABLE
     - TRUNCATE TABKE
     correctIndex: 0
+  - question: 'Which SQL statement is used to update data in a database?  '
+    answers:
+    - MODIFY
+    - UPDATE
+    - ALTER
+    correctIndex: 1
+  - question: 'Which SQL operator is used to combine two or more conditions in a
+      WHERE clause?  '
+    answers:
+    - 'AND '
+    - LIKE
+    - OR
+    correctIndex: 0
+  - question: 'Which SQL statement is used to delete data from a database?  '
+    answers:
+    - 'TRUNCATE '
+    - DELETE
+    - DROP
+    correctIndex: 1
+  - question: 'Which SQL statement is used to add a new column to an existing table?  '
+    answers:
+    - 'INSERT '
+    - ADD
+    - ALTER
+    correctIndex: 2
+  - question: 'Which SQL statement is used to create a new table? '
+    answers:
+    - 'INSERT '
+    - ADD
+    - CREATE
+    correctIndex: 2
+  - question: 'Which SQL statement is used to insert new data into a table? '
+    answers:
+    - 'INSERT '
+    - UPDATE
+    - ADD
+    correctIndex: 0
+  - question: 'Which SQL statement is used to update existing data in a table? '
+    answers:
+    - 'MODIFY '
+    - UPDATE
+    - ADD
+    correctIndex: 1
+  - question: 'Which SQL Which SQL statement is used to delete a table from a database? 
+      is used to update existing data in a table? '
+    answers:
+    - 'REMOVE '
+    - DROP
+    - DELETE
+    correctIndex: 1
+  - question: 'Which SQL statement is used to modify the structure of an existing
+      table?  '
+    answers:
+    - MODIFY
+    - CHANGE
+    - ALTER
+    correctIndex: 2
+  - question: 'Which SQL operator is used to check if a value is within a specified
+      range? '
+    answers:
+    - IN
+    - BETWEEN
+    - LIKE
+    correctIndex: 1
+  - question: 'Which SQL operator is used to check if a value is NULL? '
+    answers:
+    - 'IS NULL  '
+    - EXISTS
+    - NOT
+    correctIndex: 0
+  - question: 'Checks if a value is within a specified set of values  '
+    answers:
+    - LIKE
+    - IN
+    - BETWEEN
+    correctIndex: 1
+  - question: 'Which SQL operator is used to compare two values for equality? '
+    answers:
+    - EQUALS
+    - =
+    - IS
+    correctIndex: 1
+  - question: 'Which SQL operator is used to negates a condition? '
+    answers:
+    - UNLIKE
+    - NEGATE
+    - NOT
+    correctIndex: 1
+  - question: 'Which SQL operator is used to compare two values for inequality?  '
+    answers:
+    - <>
+    - NOT
+    - '!='
+    correctIndex: 2
+  - question: 'Which SQL query checks is a subquery returns any row? '
+    answers:
+    - EXISTS
+    - IS
+    - IN
+    correctIndex: 0
+  - question: 'Which SQL operator check if a value is null '
+    answers:
+    - EXISTS
+    - IS
+    - IN
+    correctIndex: 1
