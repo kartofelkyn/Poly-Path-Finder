@@ -14,7 +14,8 @@ public class TrackMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position -= new Vector3(0, 0, 2) * Time.deltaTime;
+        float speedControl = GameManager.Instance.currentSpeed;
+        transform.position -= new Vector3(0, 0, (Time.deltaTime * speedControl));
     }
 
     private void OnTriggerEnter(Collider other)

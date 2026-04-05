@@ -31,12 +31,12 @@ public class RenderQuizChoices : MonoBehaviour
 
         if (index == correctIndex)
         {
-            GameManagerUI.Instance.AddScore(100);
+            GameManager.Instance.AddScore(100);
             Debug.Log("Correct Answer!");
         }
         else
         {
-            GameManagerUI.Instance.TakeDamage(1);
+            GameManager.Instance.TakeDamage(1);
             Debug.Log("Wrong Answer!");
         }
 
