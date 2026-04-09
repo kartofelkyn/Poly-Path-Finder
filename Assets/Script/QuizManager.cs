@@ -4,7 +4,7 @@
 
 using UnityEngine;
 using TMPro;
-
+using System.Collections.Generic; 
 /// <summary>
 /// This script manages the quiz spawning and UI updates.
 /// </summary>
@@ -16,6 +16,22 @@ public class QuizManager : MonoBehaviour
 
     private float lastSpawnGateZ = 20f;
     public float distanceBetweenGates = 50f;
+    private int currentQuestionIndex = 0;
+    private List<Quiz> shuffledQuizzes;
+
+    void Start()
+    {
+        shuffledQuizzes = new List<Quiz>(quizData.quizzes);
+
+        // Shuffle
+        for (int i = 0; i < shuffledQuizzes.Count; i++)
+        {
+            int rand = Random.Range(i, shuffledQuizzes.Count);
+            var temp = shuffledQuizzes[i];
+            shuffledQuizzes[i] = shuffledQuizzes[rand];
+            shuffledQuizzes[rand] = temp;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -23,14 +39,19 @@ public class QuizManager : MonoBehaviour
             SpawnNextQuiz();
         }
     }
-
+    
     public void SpawnNextQuiz()
     {
-        // Pick a random question
-        int randomIndex = Random.Range(0, quizData.quizzes.Length);
-        Quiz selectedQuiz = quizData.quizzes[randomIndex];
+        if (currentQuestionIndex >= 1)
+        {
+            Debug.Log("Quiz Finished!");
+            GameManager.Instance.QuizComplete();
+            return;
+        }
 
-        // Update the question UI
+        Quiz selectedQuiz = shuffledQuizzes[currentQuestionIndex];
+        currentQuestionIndex++;
+
         QuestionUIManager.Instance.questionText.text = selectedQuiz.question;
 
         Vector3 spawnPos = new Vector3(2, 0, lastSpawnGateZ);

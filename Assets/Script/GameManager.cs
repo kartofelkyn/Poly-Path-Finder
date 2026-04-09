@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI difficultyText;
     string selectedDifficulty = LevelSelection.SelectedDifficulty;
     public GameObject gameOverPanel;
+    public GameObject pauseResumePanel;
+    public GameObject quizCompletePanel;
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI highScoreText;
     public int scoreAdd = 100;
@@ -53,6 +55,19 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void PauseResume()
+    {
+        if (Time.timeScale == 1f)
+        {
+            Time.timeScale = 0f;
+            pauseResumePanel.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            pauseResumePanel.SetActive(false);
+        }
+    }
     void Start()
     {
         if (selectedDifficulty == "Hard")
@@ -79,17 +94,20 @@ public class GameManager : MonoBehaviour
             difficultyText.text = "Easy";
         }
         gameOverPanel.SetActive(false);
+        quizCompletePanel.SetActive(false);
         UpdateUI();
     }
     public void RestartGame()
     {
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false);
+        quizCompletePanel.SetActive(false);
         SceneManager.LoadScene(2);
     }
     public void ReturnToMenu()
     {
         gameOverPanel.SetActive(false);
+        quizCompletePanel.SetActive(false);
         SceneManager.LoadScene(0);
     }
     void GameOver()
@@ -100,10 +118,18 @@ public class GameManager : MonoBehaviour
         currentSpeed = 0f;
         Debug.Log("Game Over!");
     }
+    public void QuizComplete()
+    {
+        Time.timeScale = 0f;
+        FinalScoreUI();
+        quizCompletePanel.SetActive(true);
+        currentSpeed = 0f;
+        Debug.Log("Quiz Complete!");
+    }
     void FinalScoreUI()
     {
-        currentScoreText.text = score.ToString();
-        highScoreText.text = score.ToString();
+        currentScoreText.text = score.ToString("D5");
+        highScoreText.text = score.ToString("D5");
     }
     void UpdateUI()
     {
