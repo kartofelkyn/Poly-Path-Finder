@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject pauseResumePanel;
     public GameObject quizCompletePanel;
+    public GameObject settingsPanel;
+
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI highScoreText;
     public int scoreAdd = 100;
@@ -60,19 +62,35 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale == 1f)
         {
             Time.timeScale = 0f;
+            FootstepManager.instance.StopFootsteps();
             pauseResumePanel.SetActive(true);
         }
         else
         {
             Time.timeScale = 1f;
+            FootstepManager.instance.StartFootsteps();
             pauseResumePanel.SetActive(false);
+        }
+    }
+    public void showSettings()
+    {
+        if (Time.timeScale == 0f)
+        {
+            settingsPanel.SetActive(true);
+        }
+    }
+    public void backToPauseResume()
+    {
+        if (Time.timeScale == 0f)
+        {
+            settingsPanel.SetActive(false);
         }
     }
     void Start()
     {
         if (selectedDifficulty == "Hard")
         {
-            lives = 1;
+            lives = 3;
             score = 0;
             scoreAdd = 100;
             speedIncreaseRate = 0.2f;
@@ -88,31 +106,35 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lives = 8;
+            lives = 3;
             score = 0;
             scoreAdd = 0;
             difficultyText.text = "Easy";
         }
+        FootstepManager.instance.StartFootsteps();
         gameOverPanel.SetActive(false);
         quizCompletePanel.SetActive(false);
         UpdateUI();
     }
     public void RestartGame()
     {
+        FootstepManager.instance.StopFootsteps();
         Time.timeScale = 1f;
         gameOverPanel.SetActive(false);
         quizCompletePanel.SetActive(false);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("GamePlay");
     }
     public void ReturnToMenu()
     {
+        FootstepManager.instance.StopFootsteps();
         gameOverPanel.SetActive(false);
         quizCompletePanel.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
     void GameOver()
     {
         Time.timeScale = 0f;
+        FootstepManager.instance.StopFootsteps();
         FinalScoreUI();
         gameOverPanel.SetActive(true);
         currentSpeed = 0f;
@@ -121,6 +143,7 @@ public class GameManager : MonoBehaviour
     public void QuizComplete()
     {
         Time.timeScale = 0f;
+        FootstepManager.instance.StopFootsteps();
         FinalScoreUI();
         quizCompletePanel.SetActive(true);
         currentSpeed = 0f;
@@ -128,6 +151,8 @@ public class GameManager : MonoBehaviour
     }
     void FinalScoreUI()
     {
+        GamePlaySound.instance.GameEnd();
+
         currentScoreText.text = score.ToString("D5");
         highScoreText.text = score.ToString("D5");
     }
