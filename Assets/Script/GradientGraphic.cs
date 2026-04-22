@@ -52,7 +52,6 @@ public class GradientGraphic : MaskableGraphic, ILayoutElement
         float x0 = -width * pivot.x;
         float y0 = -height * pivot.y;
 
-        // Simple quad (no slicing for simplicity)
         vh.AddVert(new Vector3(x0, y0), bottomLeftColor, new Vector2(uv.x, uv.y));
         vh.AddVert(new Vector3(x0, y0 + height), topLeftColor, new Vector2(uv.x, uv.w));
         vh.AddVert(new Vector3(x0 + width, y0 + height), topRightColor, new Vector2(uv.z, uv.w));

@@ -11,37 +11,38 @@ using TMPro;
 
 public class RenderQuizChoices : MonoBehaviour
 {
-    public TextMeshPro[] laneTexts;
+    public TextMeshPro laneText;
     private int correctIndex;
-    private bool hasBeenAnswered = false;
 
-
-    public void Setup(string[] answers, int correctIdx)
+    public int index = 0;
+    public void Setup(string answer, int correctIdx, int myIndex)
     {
+        laneText.text = answer;
         correctIndex = correctIdx;
-        for (int i = 0; i < laneTexts.Length; i++)
-        {
-            laneTexts[i].text = answers[i];
-        }
+
+        // store which answer this gate represents
+        this.index = myIndex;
     }
-
-    public void OnLaneHit(int index)
+    
+    public void OnLaneHit()
     {
-        if (hasBeenAnswered) return;
-        hasBeenAnswered = true;
-
+        if (QuizManager.Instance.questionAnswered) return;
+        Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
+        QuizManager.Instance.questionAnswered = true;
+        Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
         if (index == correctIndex)
         {
             GameManager.Instance.AddScore(100);
             GamePlaySound.instance.AnswerRight();
+            QuizManager.Instance.checkIfAnswerCalled = true;
             Debug.Log("Correct Answer!");
         }
         else
         {
             GameManager.Instance.TakeDamage(1);
             GamePlaySound.instance.AnswerWrong();
+            QuizManager.Instance.checkIfAnswerCalled = true;
             Debug.Log("Wrong Answer!");
         }
-
     }
 }

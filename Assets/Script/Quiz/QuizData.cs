@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Define this OUTSIDE of any class so it's accessible everywhere
 public enum DifficultyLevel { Easy, Medium, Hard }
 
 [System.Serializable]
@@ -17,7 +16,6 @@ public class QuizData : ScriptableObject
 {
     public Quiz[] quizzes;
 
-    // Call this from your GameManager/QuizManager to get the right questions
     public System.Collections.Generic.List<Quiz> GetQuizzesForDifficulty(string diffString)
     {
         System.Collections.Generic.List<Quiz> filtered = new System.Collections.Generic.List<Quiz>();

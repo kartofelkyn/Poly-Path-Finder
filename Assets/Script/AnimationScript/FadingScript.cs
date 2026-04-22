@@ -29,6 +29,6 @@ public class FadingScript : MonoBehaviour
             cg.alpha = Mathf.Lerp(start, end, elapsed / duration);
             yield return null;
         }
-        cg.alpha = end; // Ensure it ends at the exact value
+        cg.alpha = end;
     }
 }

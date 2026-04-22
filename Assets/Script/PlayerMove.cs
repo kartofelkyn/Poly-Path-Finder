@@ -1,73 +1,210 @@
-// <copyright file="PlayerMove.cs" company="PLM BSCS 4-1 (2026)">
-// Copyright (c) PLM BSCS 4-1 (2026)". All rights reserved.
-// </copyright>
-
 using UnityEngine;
-
-/// <summary>
-/// This script handles the player's movement between the three lanes.
-/// It uses two invisible buttons (left and right) to trigger the movement, and the player will move smoothly to the next lane when a button is pressed.
-/// </summary>
+using System.Collections.Generic;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float xPos;
+    [Header("Lane Settings")]
+    [SerializeField] float laneY = 1f;
+    [SerializeField] float laneZ = -5.48f;
+    [SerializeField] float laneOffset = 1f;
     [SerializeField] int trackNumber = 1;
-    [SerializeField] int sideSpeed = 3;
-    [SerializeField] bool currentMove;
-    [SerializeField] int moveDirection; //1=left. 2=right
+
+    [Header("Movement")]
+    [SerializeField] float moveSmoothTime = 0.08f;
+
+    [Header("Running Bounce")]
+    [SerializeField] float runBounceHeight = 0.2f;
+    [SerializeField] float runBounceSpeed = 7f;
+
+    [Header("Jump")]
+    [SerializeField] float jumpHeight = 1.2f;
+    [SerializeField] float jumpDuration = 0.6f;
+
+    [Header("Lane Bounce")]
+    [SerializeField] float laneJumpHeight = 0.2f;
+    [SerializeField] float laneJumpDuration = 0.2f;
+
+    [Header("Tilt")]
+    [SerializeField] float tiltAmount = 15f;
+    [SerializeField] float tiltSpeed = 10f;
+    [SerializeField] float forwardTilt = 10f;
+
+    private Vector3 targetPosition;
+    private Vector3 velocity;
+    private float baseY;
+    private float timeCounter;
+
+    // Jump
+    private bool isGrounded = true;
+    private bool isAirJumping = false;
+    private float airJumpTimer = 0f;
+
+    // Lane bounce
+    private bool isLaneJumping = false;
+    private float laneJumpTimer = 0f;
+
+    // Tilt
+    private float currentTilt = 0f;
+    private float targetTilt = 0f;
+
+    // Input buffer (ONLY for left/right)
+    private Queue<System.Action> inputQueue = new Queue<System.Action>();
+    private bool isChangingLane = false;
+
+    void Start()
+    {
+        baseY = laneY;
+        targetPosition = new Vector3(trackNumber * laneOffset, laneY, laneZ);
+        transform.position = targetPosition;
+    }
+
     void Update()
     {
-        xPos = gameObject.transform.position.x;
-        if (currentMove == true && moveDirection == 1)
+        timeCounter += Time.deltaTime;
+
+        HandleBufferedInput();
+        MovePlayer();
+        HandleJumpAndBounce();
+        HandleTilt();
+    }
+
+    // INPUT BUFFER
+    void HandleBufferedInput()
+    {
+        if (inputQueue.Count == 0) return;
+        if (isChangingLane) return;
+
+        var action = inputQueue.Dequeue();
+        action.Invoke();
+    }
+
+    public void QueueLeft() => inputQueue.Enqueue(MoveLeft);
+    public void QueueRight() => inputQueue.Enqueue(MoveRight);
+
+    // Jump is NOT buffered
+    public void QueueJump()
+    {
+        if (!isGrounded) return;
+        Jump();
+    }
+
+    // MOVEMENT
+    void MovePlayer()
+    {
+        Vector3 pos = Vector3.SmoothDamp(
+            transform.position,
+            targetPosition,
+            ref velocity,
+            moveSmoothTime
+        );
+
+        transform.position = new Vector3(pos.x, transform.position.y, pos.z);
+
+        if (Mathf.Abs(transform.position.x - targetPosition.x) < 0.01f)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * sideSpeed, Space.World);
-            if (xPos <= trackNumber)
-            {
-                currentMove = false;
-                moveDirection = 0;
-                transform.position = new Vector3(trackNumber, 1, -5.48f);
-            }
-        }
-        if (currentMove == true && moveDirection == 2)
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * sideSpeed, Space.World);
-            if (xPos >= trackNumber)
-            {
-                currentMove = false;
-                moveDirection = 0;
-                transform.position = new Vector3(trackNumber, 1, -5.48f);
-            }
+            isChangingLane = false;
         }
     }
-    public void MoveLeft()
+
+    void MoveLeft()
     {
-        if (trackNumber == 1)
-        {
-            currentMove = true;
-            moveDirection = 1;
-            trackNumber = 0;
-        }
-        else if (trackNumber == 2)
-        {
-            currentMove = true;
-            moveDirection = 1;
-            trackNumber = 1;
-        }
+        if (trackNumber <= 0) return;
+
+        trackNumber--;
+        targetTilt = tiltAmount;
+        UpdateTarget();
     }
-    public void MoveRight()
+
+    void MoveRight()
     {
-        if (trackNumber == 0)
+        if (trackNumber >= 2) return;
+
+        trackNumber++;
+        targetTilt = -tiltAmount;
+        UpdateTarget();
+    }
+
+    void UpdateTarget()
+    {
+        targetPosition = new Vector3(trackNumber * laneOffset, laneY, laneZ);
+
+        isChangingLane = true;
+
+        // Lane bounce
+        isLaneJumping = true;
+        laneJumpTimer = 0f;
+
+        Invoke(nameof(ResetTilt), 0.2f);
+    }
+
+    // JUMP + BOUNCE SYSTEM
+    void HandleJumpAndBounce()
+    {
+        float yOffset = 0f;
+
+        // RUNNING BOUNCE
+        float runBounce = Mathf.Abs(Mathf.Sin(timeCounter * runBounceSpeed)) * runBounceHeight;
+        yOffset += runBounce;
+
+        // REAL JUMP
+        if (isAirJumping)
         {
-            currentMove = true;
-            moveDirection = 2;
-            trackNumber = 1;
+
+            airJumpTimer += Time.deltaTime;
+            float progress = airJumpTimer / jumpDuration;
+
+            if (progress >= 1f)
+            {
+                progress = 1f;
+                isAirJumping = false;
+                isGrounded = true;
+            }
+
+            yOffset += Mathf.Sin(progress * Mathf.PI) * jumpHeight;
         }
-        else if (trackNumber == 1)
+
+        // LANE BOUNCE
+        if (isLaneJumping)
         {
-            currentMove = true;
-            moveDirection = 2;
-            trackNumber = 2;
+            laneJumpTimer += Time.deltaTime;
+            float progress = laneJumpTimer / laneJumpDuration;
+
+            if (progress >= 1f)
+            {
+                progress = 1f;
+                isLaneJumping = false;
+            }
+
+            yOffset += Mathf.Sin(progress * Mathf.PI) * laneJumpHeight;
         }
+
+        transform.position = new Vector3(
+            transform.position.x,
+            baseY + yOffset,
+            transform.position.z
+        );
+    }
+
+    public void Jump()
+    {
+        if (!isGrounded) return;
+
+        isAirJumping = true;
+        isGrounded = false;
+        airJumpTimer = 0f;
+
+        GamePlaySound.instance.Jump();
+    }
+
+    // TILT
+    void HandleTilt()
+    {
+        currentTilt = Mathf.Lerp(currentTilt, targetTilt, Time.deltaTime * tiltSpeed);
+        transform.rotation = Quaternion.Euler(forwardTilt, 0, currentTilt);
+    }
+
+    void ResetTilt()
+    {
+        targetTilt = 0f;
     }
 }

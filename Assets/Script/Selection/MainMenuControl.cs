@@ -11,6 +11,7 @@ public class MainMenuControl : MonoBehaviour
     void Start()
     {
         MusicManager.Instance.PlayMusic(menuMusic);
+        SettingsManager.Instance.LoadSettings();
     }
 
     public void StartGame()

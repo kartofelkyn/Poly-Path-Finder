@@ -17,17 +17,14 @@ public class LoadingBar : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
-        // Prevent automatic scene switch so we can control progress
         operation.allowSceneActivation = false;
 
         while (!operation.isDone)
         {
-            // Unity progress goes 0 → 0.9 (NOT 1.0)
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
             slider.value = progress;
 
-            // When fully loaded (almost done)
             if (operation.progress >= 0.9f && !hasStartedFade)
             {
                 hasStartedFade = true;
@@ -36,7 +33,6 @@ public class LoadingBar : MonoBehaviour
                 
                 yield return new WaitForSeconds(2f);
 
-                // wait for fade to finish
                 yield return fadingScript.FadeOut();
 
                 operation.allowSceneActivation = true;

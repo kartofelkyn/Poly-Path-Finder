@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lives = 3;
+            lives = 8;
             score = 0;
             scoreAdd = 0;
             difficultyText.text = "Easy";
@@ -126,10 +126,15 @@ public class GameManager : MonoBehaviour
     }
     public void ReturnToMenu()
     {
+        Debug.Log("SceneTransitionManager: " + SceneTransitionManager.Instance);
+
         FootstepManager.instance.StopFootsteps();
         gameOverPanel.SetActive(false);
         quizCompletePanel.SetActive(false);
-        SceneManager.LoadScene("MainMenu");
+        SceneTransitionManager.Instance.BeginTransition("MainMenu");
+        Time.timeScale = 1f;
+        FootstepManager.instance.StopFootsteps();
+        pauseResumePanel.SetActive(false);
     }
     void GameOver()
     {
@@ -152,9 +157,11 @@ public class GameManager : MonoBehaviour
     void FinalScoreUI()
     {
         GamePlaySound.instance.GameEnd();
+        SettingsManager.Instance.SetHighScore(score);
 
         currentScoreText.text = score.ToString("D5");
-        highScoreText.text = score.ToString("D5");
+        highScoreText.text = SettingsManager.Instance.highScore.ToString("D5");
+
     }
     void UpdateUI()
     {

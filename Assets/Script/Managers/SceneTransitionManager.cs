@@ -11,7 +11,7 @@ public class SceneTransitionManager : MonoBehaviour
     public Canvas loadingScreen;
     public Canvas mainPanel;
 
-    public float fadeDuration = 1f;
+    public float fadeDuration = 0.5f;
 
     private void Awake()
     {
@@ -20,12 +20,12 @@ public class SceneTransitionManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
     public void BeginTransition(string sceneName)
     {
-        fadePanel.alpha = 0;
-
         StartCoroutine(LoadWithFade(sceneName));
     }
+
     public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadWithFade(sceneName));
@@ -33,49 +33,69 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator LoadWithFade(string sceneName)
     {
-        fadePanel.alpha = 0;
-
-        yield return null;
-
-        yield return StartCoroutine(Fade(1, 0, 0.2f));
-
-
-        loadingScreen.enabled = true;
-        mainPanel.enabled = false;
-
-        yield return StartCoroutine(Fade(1, 0, fadeDuration));
-
-        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
-        op.allowSceneActivation = false;
-
-        float timer = 0;
-
-        while (timer < 3f || op.progress < 0.9f)
+        if (sceneName == "GamePlay")
         {
-            timer += Time.deltaTime;
             yield return null;
+
+            loadingScreen.gameObject.SetActive(true);
+            mainPanel.gameObject.SetActive(false);
+            AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
+            op.allowSceneActivation = false;
+            yield return new WaitForSeconds(1f);
+
+            while (op.progress < 0.9f)
+            {
+                yield return null;
+            }
+            op.allowSceneActivation = true;
+
+            while (!op.isDone)
+            {
+                yield return null;
+            }
+            loadingScreen.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            fadePanel.gameObject.SetActive(true);
+            yield return null;
+
+            yield return StartCoroutine(Fade(0, 1, fadeDuration));
+
+            AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
+            op.allowSceneActivation = false;
+
+            yield return new WaitForSeconds(0.2f);
+
+            while (op.progress < 0.9f)
+            {
+                yield return null;
+            }
+
+            op.allowSceneActivation = true;
+
+            while (!op.isDone)
+            {
+                yield return null;
+            }
+
+            yield return StartCoroutine(Fade(1, 0, fadeDuration));
         }
 
-        // Fade to black again
-        yield return StartCoroutine(Fade(0, 1, fadeDuration));
 
-        op.allowSceneActivation = true;
-
-        while (!op.isDone)
-            yield return null;
-
-        // Fade into new scene
-        yield return StartCoroutine(Fade(1, 0, fadeDuration));
     }
 
     IEnumerator Fade(float start, float end, float duration)
     {
-        float time = 0;
+        float time = 0f;
+
+        fadePanel.alpha = start;
 
         while (time < duration)
         {
-            fadePanel.alpha = Mathf.Lerp(start, end, time / duration);
             time += Time.deltaTime;
+            fadePanel.alpha = Mathf.Lerp(start, end, time / duration);
             yield return null;
         }
 

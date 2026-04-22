@@ -10,15 +10,23 @@ public class QuizManager : MonoBehaviour
 {
     public QuizData quizData;
     public GameObject gateChoicesPrefab;
-
+    public GameObject newQuizTrigger;
+    public GameObject checkIfanswerTrigger;
+    public bool questionAnswered = false;
+    public bool checkIfAnswerCalled = false;
     private float lastSpawnGateZ = 20f;
-    public float distanceBetweenGates = 50f;
+    public float distanceBetweenGates = 0f;
+    private float distanceBetweenPlayer = 20f;
     private int currentQuestionIndex = 0;
     private List<Quiz> shuffledQuizzes;
+    public static QuizManager Instance;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
-        // Get the difficulty from your LevelSelection script
         Debug.Log("Selected Difficulty: " + LevelSelection.SelectedDifficulty);
         string selectedDiff = string.IsNullOrEmpty(LevelSelection.SelectedDifficulty)
     ? "Easy"
@@ -60,16 +68,81 @@ public class QuizManager : MonoBehaviour
         Quiz selectedQuiz = shuffledQuizzes[currentQuestionIndex];
         currentQuestionIndex++;
 
+        // Set question text
         QuestionUIManager.Instance.questionText.text = selectedQuiz.question;
 
-        // Keeping your original positioning logic as requested
-        Vector3 spawnPos = new Vector3(2, 0, lastSpawnGateZ);
-        GameObject newGate = Instantiate(gateChoicesPrefab, spawnPos, Quaternion.identity);
-        RenderQuizChoices container = newGate.GetComponent<RenderQuizChoices>();
+        // SHUFFLE ANSWERS
+        List<string> shuffledAnswers = new List<string>(selectedQuiz.answers);
 
-        if (container != null)
+        for (int i = 0; i < shuffledAnswers.Count; i++)
         {
-            container.Setup(selectedQuiz.answers, selectedQuiz.correctIndex);
+            int rand = Random.Range(i, shuffledAnswers.Count);
+            string temp = shuffledAnswers[i];
+            shuffledAnswers[i] = shuffledAnswers[rand];
+            shuffledAnswers[rand] = temp;
+        }
+
+        // Find new correct index after shuffle
+        int newCorrectIndex = shuffledAnswers.IndexOf(
+            selectedQuiz.answers[selectedQuiz.correctIndex]
+        );
+
+        // SPAWN GATES
+        float currentZ = distanceBetweenPlayer;
+
+        for (int i = 0; i < shuffledAnswers.Count; i++)
+        {
+            currentZ += Random.Range(6f, 12f); // spacing BEFORE spawn
+
+            Vector3 spawnPos = new Vector3(
+                (Random.value < 0.5f) ? 0.5f : 1.5f,
+                (Random.value < 0.5f) ? 1f : 2.25f,
+                currentZ
+            );
+
+            GameObject gate = Instantiate(gateChoicesPrefab, spawnPos, Quaternion.identity);
+            RenderQuizChoices container = gate.GetComponent<RenderQuizChoices>();
+
+            if (container != null)
+            {
+                container.Setup(
+                    shuffledAnswers[i],
+                    newCorrectIndex,
+                    i
+                );
+            }
+        }
+
+        float finalGateZ = currentZ;
+
+        // Check if player answer if not then -> take damage
+        Vector3 checkTriggerPos = new Vector3(
+            1f,
+            1f,
+            finalGateZ + 5f
+        );
+
+        Instantiate(checkIfanswerTrigger, checkTriggerPos, Quaternion.identity);
+
+        // Spawn trigger for next quiz after some distance
+        Vector3 triggerPos = new Vector3(
+            1f,
+            1f,
+            finalGateZ + 15f
+        ); Instantiate(newQuizTrigger, triggerPos, Quaternion.identity);
+
+        Vector3 RandomizeGatePositions()
+        {
+            float[] Xoptions = { 0.5f, 1.5f };
+            float x = Xoptions[Random.Range(0, Xoptions.Length)];
+
+            float y = (Random.value < 0.3f) ? 1f : 1f;
+
+            float z = distanceBetweenPlayer + distanceBetweenGates;
+
+            Debug.Log($"Spawning gate at X: {x}, Y: {y}, Z: {z}");
+
+            return new Vector3(x, y, z);
         }
     }
 }

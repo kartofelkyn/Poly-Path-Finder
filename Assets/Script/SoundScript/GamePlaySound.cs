@@ -7,6 +7,7 @@ public class GamePlaySound : MonoBehaviour
     public AudioClip rightAnswerSound;
     public AudioClip wrongAnswerSound;
     public AudioClip gameEndSound;
+    public AudioClip jumpSound;
 
 
     void Awake()
@@ -34,7 +35,10 @@ public class GamePlaySound : MonoBehaviour
     {
         PlaySound(gameEndSound);
     }
-
+    public void Jump()
+    {
+        PlaySound(jumpSound);
+    }
     void PlaySound(AudioClip clip)
     {
         if (clip == null) return;

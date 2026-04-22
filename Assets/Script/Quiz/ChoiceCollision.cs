@@ -11,13 +11,11 @@ using UnityEngine;
 
 public class ChoiceCollision : MonoBehaviour
 {
-    public int laneIndex; 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GetComponentInParent<RenderQuizChoices>().OnLaneHit(laneIndex);
+            GetComponentInParent<RenderQuizChoices>().OnLaneHit();
         }
     }
 }
