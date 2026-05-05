@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Continuously rotates the object around its Y-axis at a defined speed.
+/// </summary>
 public class RotateObject : MonoBehaviour
 {
     public float rotationSpeed = 100f;

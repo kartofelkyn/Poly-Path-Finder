@@ -12,15 +12,18 @@ using UnityEngine;
 
 public class SectionTrigger : MonoBehaviour
 {
-    public GameObject trackSection;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Trigger"))
+        if(other.gameObject.CompareTag("StartTrack"))
+        {
+            Vector3 spawnPos = other.transform.position + new Vector3(1, -2, 30f);
+            Instantiate(TrackManager.Instance.GetRandomTrackSection(), spawnPos, Quaternion.identity);
+        }
+        else if (other.gameObject.CompareTag("Trigger"))
         {
             Vector3 spawnPos = other.transform.position + new Vector3(0, 0, 111f);
-            Instantiate(trackSection, spawnPos, Quaternion.identity);
-
+            Instantiate(TrackManager.Instance.GetRandomTrackSection(), spawnPos, Quaternion.identity);
         }
     }
 }

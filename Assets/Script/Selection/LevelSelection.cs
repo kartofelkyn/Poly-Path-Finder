@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelection : MonoBehaviour
 {
     public static string SelectedDifficulty = "Easy";
+    public static bool useAI = false;
     public AudioClip clickSound;
     public void SetEasy()
     {
@@ -11,6 +12,8 @@ public class LevelSelection : MonoBehaviour
             AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
 
         SelectedDifficulty = "Easy";
+        useAI = false;
+
         SceneTransitionManager.Instance.BeginTransition("GamePlay");
     }
     public void SetMedium()
@@ -19,6 +22,8 @@ public class LevelSelection : MonoBehaviour
             AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
 
         SelectedDifficulty = "Medium";
+        useAI = false;
+
         SceneTransitionManager.Instance.BeginTransition("GamePlay");
     }
     public void SetHard()
@@ -27,8 +32,11 @@ public class LevelSelection : MonoBehaviour
             AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
 
         SelectedDifficulty = "Hard";
+        useAI = false;
+
         SceneTransitionManager.Instance.BeginTransition("GamePlay");
     }
+
     public void goBack()
     {
         if (clickSound != null)

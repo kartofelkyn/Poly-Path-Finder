@@ -29,12 +29,53 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI highScoreText;
     public int scoreAdd = 100;
+    public GameState state = GameState.Intro;
     private void Awake()
     {
         Instance = this;
     }
+    void Start()
+    {
+        if (selectedDifficulty == "Hard")
+        {
+            lives = 3;
+            score = 0;
+            scoreAdd = 100;
+            speedIncreaseRate = 0.2f;
+            difficultyText.text = "Hard";
+        }
+        else if (selectedDifficulty == "Medium")
+        {
+            lives = 5;
+            score = 0;
+            scoreAdd = 50;
+            speedIncreaseRate = 0.10f;
+            difficultyText.text = "Medium";
+        }
+        else if (LevelSelection.useAI)
+        {
+            lives = 10;
+            score = 0;
+            scoreAdd = 50;
+            speedIncreaseRate = 0.10f;
+            difficultyText.text = "AI Mode";
+        }
+        else
+        {
+            lives = 1;
+            score = 0;
+            scoreAdd = 0;
+            difficultyText.text = "Easy";
+        }
+        FootstepManager.instance.StartFootsteps();
+        gameOverPanel.SetActive(false);
+        quizCompletePanel.SetActive(false);
+        UpdateUI();
+        state = GameState.Intro;
+    }
     void Update()
     {
+        if (state != GameState.Playing) return;
         if (currentSpeed < maxSpeed)
         {
             currentSpeed += speedIncreaseRate * Time.deltaTime;
@@ -86,36 +127,7 @@ public class GameManager : MonoBehaviour
             settingsPanel.SetActive(false);
         }
     }
-    void Start()
-    {
-        if (selectedDifficulty == "Hard")
-        {
-            lives = 3;
-            score = 0;
-            scoreAdd = 100;
-            speedIncreaseRate = 0.2f;
-            difficultyText.text = "Hard";
-        }
-        else if (selectedDifficulty == "Medium")
-        {
-            lives = 5;
-            score = 0;
-            scoreAdd = 50;
-            speedIncreaseRate = 0.10f;
-            difficultyText.text = "Medium";
-        }
-        else
-        {
-            lives = 8;
-            score = 0;
-            scoreAdd = 0;
-            difficultyText.text = "Easy";
-        }
-        FootstepManager.instance.StartFootsteps();
-        gameOverPanel.SetActive(false);
-        quizCompletePanel.SetActive(false);
-        UpdateUI();
-    }
+    
     public void RestartGame()
     {
         FootstepManager.instance.StopFootsteps();
@@ -136,7 +148,7 @@ public class GameManager : MonoBehaviour
         FootstepManager.instance.StopFootsteps();
         pauseResumePanel.SetActive(false);
     }
-    void GameOver()
+    public void GameOver()
     {
         Time.timeScale = 0f;
         FootstepManager.instance.StopFootsteps();

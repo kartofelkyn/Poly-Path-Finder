@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float moveSmoothTime = 0.08f;
 
     [Header("Running Bounce")]
+    [SerializeField] float runSpeed = 5f;
+
     [SerializeField] float runBounceHeight = 0.2f;
     [SerializeField] float runBounceSpeed = 7f;
 
@@ -28,6 +30,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float tiltAmount = 15f;
     [SerializeField] float tiltSpeed = 10f;
     [SerializeField] float forwardTilt = 10f;
+    
+    [Header("Camera")]
+    [SerializeField] Transform mainCamera;
+    [SerializeField] float introCameraSpeedY = 1f;
+    [SerializeField] float introCameraSpeedZ = 1f;
 
     private Vector3 targetPosition;
     private Vector3 velocity;
@@ -51,21 +58,54 @@ public class PlayerMove : MonoBehaviour
     private Queue<System.Action> inputQueue = new Queue<System.Action>();
     private bool isChangingLane = false;
 
+
     void Start()
     {
+        Debug.Log("Player move starty");
         baseY = laneY;
         targetPosition = new Vector3(trackNumber * laneOffset, laneY, laneZ);
-        transform.position = targetPosition;
     }
 
     void Update()
     {
+        if (GameManager.Instance.state == GameState.Intro)
+        {
+            IntroMovement();
+            return;
+        }
+
+        if (GameManager.Instance.state != GameState.Playing)
+        {
+            return;
+        }
+
         timeCounter += Time.deltaTime;
 
         HandleBufferedInput();
         MovePlayer();
         HandleJumpAndBounce();
         HandleTilt();
+    }
+    void IntroMovement()
+    {
+        timeCounter += Time.deltaTime;
+
+        float runBounce = Mathf.Abs(Mathf.Sin(timeCounter * runBounceSpeed)) * runBounceHeight;
+
+        transform.position += new Vector3(0, 0, runSpeed * Time.deltaTime);
+
+        transform.position = new Vector3(
+            transform.position.x,
+            1f + runBounce,
+            transform.position.z
+        );
+        mainCamera.position += new Vector3(0, runSpeed * Time.deltaTime * introCameraSpeedY, Time.deltaTime * introCameraSpeedZ);
+        if (transform.position.z >= -5.48f)
+        {
+            GameManager.Instance.state = GameState.Playing;
+            mainCamera.position = new Vector3(1f, 3.4f, -9.43f);
+            mainCamera.rotation = Quaternion.Euler(25.51f, 0f, 0f);
+        }
     }
 
     // INPUT BUFFER

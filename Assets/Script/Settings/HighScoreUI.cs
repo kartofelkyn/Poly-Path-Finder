@@ -7,6 +7,6 @@ public class HighScoreUI : MonoBehaviour
 
     void Start()
     {
-        text.text = "High Score: " + SettingsManager.Instance.highScore;
+        text.text = $"{SettingsManager.Instance.highScore}";
     }
 }

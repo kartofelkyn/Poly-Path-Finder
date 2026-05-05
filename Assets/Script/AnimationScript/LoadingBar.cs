@@ -3,6 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script manages the loading bar UI and scene transition. 
+/// It asynchronously loads a specified scene while updating a slider to reflect the loading progress. Once the loading is nearly complete, 
+/// it triggers a fade-out effect before activating the new scene. This provides a smooth visual transition for the user during scene changes.
+/// </summary>
 public class LoadingBar : MonoBehaviour
 {
     public Slider slider;

@@ -14,6 +14,7 @@ public class TrackMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.state != GameState.Playing) return;
         float speedControl = GameManager.Instance.currentSpeed;
         transform.position -= new Vector3(0, 0, (Time.deltaTime * speedControl));
     }

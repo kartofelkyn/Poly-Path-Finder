@@ -1,6 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+/// <summary>
+/// Handles fading in and out of a CanvasGroup for smooth transitions, such as when loading new scenes or displaying UI elements. 
+/// The script allows for customizable fade duration and can be triggered to fade in or out as needed.
+/// </summary>
+
 public class FadingScript : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
