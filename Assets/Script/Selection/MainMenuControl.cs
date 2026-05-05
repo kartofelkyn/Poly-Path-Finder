@@ -8,6 +8,7 @@ public class MainMenuControl : MonoBehaviour
     public AudioClip menuMusic;
     public GameObject settingsPanel;
     public GameObject mainMenuPanel;
+    public GameObject characterSelectorPanel;
     void Start()
     {
         MusicManager.Instance.PlayMusic(menuMusic);
@@ -30,8 +31,17 @@ public class MainMenuControl : MonoBehaviour
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
         mainMenuPanel.SetActive(false);
+        characterSelectorPanel.SetActive(false);
         settingsPanel.SetActive(true);
-        
+    }
+    public void showCharacterSelector()
+    {
+        if (clickSound != null)
+            AudioManager.Instance.PlaySFX(clickSound);
+        mainMenuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        characterSelectorPanel.SetActive(true);
+
     }
     public void backToMainMenu()
     {
@@ -39,9 +49,17 @@ public class MainMenuControl : MonoBehaviour
 
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
-        
+
         settingsPanel.SetActive(false);
+        characterSelectorPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+    }
+    public void QuitGame()
+    {
+        if (clickSound != null)
+            AudioManager.Instance.PlaySFX(clickSound);
+
+        Application.Quit();
     }
     IEnumerator StartGameRoutine()
     {

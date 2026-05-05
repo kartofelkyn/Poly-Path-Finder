@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7629838093345190953}
   - component: {fileID: 262013774115713072}
-  - component: {fileID: 3170203767841334563}
   - component: {fileID: 5368236410152103651}
+  - component: {fileID: 8364962118954595834}
   m_Layer: 0
   m_Name: New_Quiz_Trigger
   m_TagString: GenerateQuiz
@@ -55,18 +55,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.8300166, y: 7.359975, z: 1}
   m_Center: {x: -0.5720384, y: 0.8835821, z: 0}
---- !u!114 &3170203767841334563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100716609772945347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c186572ba8bc342b1363537dcdfe71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewQuizTrigger
 --- !u!114 &5368236410152103651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,3 +67,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd341fe0bb36d842a238369c2e43518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackMovement
+--- !u!114 &8364962118954595834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100716609772945347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c186572ba8bc342b1363537dcdfe71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewQuizTrigger
