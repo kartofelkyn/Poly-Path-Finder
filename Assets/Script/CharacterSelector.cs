@@ -5,6 +5,7 @@ public class CharacterSelector : MonoBehaviour
 {
     public CharacterData[] characters;
     public TextMeshProUGUI characterNameText;
+    public TextMeshProUGUI selectButtonText;
     private int index = 0;
 
     void Start()
@@ -34,13 +35,21 @@ public class CharacterSelector : MonoBehaviour
             characters[x].characterObject.SetActive(x == i);
         }
         characterNameText.text = characters[index].characterName;
+        if (PlayerPrefs.GetInt("SelectedCharacter", 0) == index)
+        {
+            selectButtonText.text = "Selected";
+        }
+        else
+        {
+            selectButtonText.text = "Select";
+        }
     }
 
     public void Select()
     {
         PlayerPrefs.SetInt("SelectedCharacter", index);
         PlayerPrefs.SetString("SelectedCharacterName", characters[index].characterName);
-
+        selectButtonText.text = "Selected";
         Debug.Log("Selected: " + characters[index].characterName);
     }
 }

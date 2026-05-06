@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class LevelSelection : MonoBehaviour
         SelectedDifficulty = "Easy";
         useAI = false;
 
-        SceneTransitionManager.Instance.BeginTransition("GamePlay");
+        StartCoroutine(SwitchScene("GamePlay"));
     }
     public void SetMedium()
     {
@@ -24,7 +25,7 @@ public class LevelSelection : MonoBehaviour
         SelectedDifficulty = "Medium";
         useAI = false;
 
-        SceneTransitionManager.Instance.BeginTransition("GamePlay");
+        StartCoroutine(SwitchScene("GamePlay"));
     }
     public void SetHard()
     {
@@ -34,13 +35,18 @@ public class LevelSelection : MonoBehaviour
         SelectedDifficulty = "Hard";
         useAI = false;
 
-        SceneTransitionManager.Instance.BeginTransition("GamePlay");
+        StartCoroutine(SwitchScene("GamePlay"));
     }
 
     public void goBack()
     {
         if (clickSound != null)
             AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
-        SceneTransitionManager.Instance.BeginTransition("MainMenu");
+        StartCoroutine(SwitchScene("MainMenu"));
+    }
+    IEnumerator SwitchScene(string sceneName)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneTransitionManager.Instance.BeginTransition(sceneName);
     }
 }

@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float tiltAmount = 15f;
     [SerializeField] float tiltSpeed = 10f;
     [SerializeField] float forwardTilt = 10f;
-    
+
     [Header("Camera")]
     [SerializeField] Transform mainCamera;
     [SerializeField] float introCameraSpeedY = 1f;
@@ -118,12 +118,23 @@ public class PlayerMove : MonoBehaviour
         action.Invoke();
     }
 
-    public void QueueLeft() => inputQueue.Enqueue(MoveLeft);
-    public void QueueRight() => inputQueue.Enqueue(MoveRight);
+    public void QueueLeft()
+    {
+        if (GameManager.Instance.state != GameState.Playing) return;
+        inputQueue.Enqueue(MoveLeft);
+    }
+
+    public void QueueRight()
+    {
+        if (GameManager.Instance.state != GameState.Playing) return;
+        inputQueue.Enqueue(MoveRight);
+    }
 
     // Jump is NOT buffered
     public void QueueJump()
     {
+        if (GameManager.Instance.state != GameState.Playing) return;
+
         if (!isGrounded) return;
         Jump();
     }

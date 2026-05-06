@@ -888,10 +888,10 @@ RectTransform:
   - {fileID: 554220695}
   m_Father: {fileID: 675277454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 225, y: -889.46265}
-  m_SizeDelta: {x: 302.0903, y: 126.6542}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -315, y: 310.53735}
+  m_SizeDelta: {x: 302.09033, y: 126.654175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273715895
 MonoBehaviour:
@@ -1491,10 +1491,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 675277454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 564}
-  m_SizeDelta: {x: 1080, y: 519.0463}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -636}
+  m_SizeDelta: {x: 1080, y: 519.0464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609294334
 MonoBehaviour:
@@ -1772,10 +1772,10 @@ RectTransform:
   - {fileID: 273715894}
   m_Father: {fileID: 1771081722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1080, y: 2400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675277455
 MonoBehaviour:
@@ -2055,9 +2055,9 @@ RectTransform:
   - {fileID: 1623034865}
   m_Father: {fileID: 675277454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1577}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -377}
   m_SizeDelta: {x: 1080, y: 153.03833}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899360878
@@ -2242,8 +2242,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 220
-  m_fontSizeBase: 220
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2252,10 +2252,10 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -2
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2612,6 +2612,7 @@ MonoBehaviour:
   - characterName: Jullaine
     characterObject: {fileID: 1511576094}
   characterNameText: {fileID: 1623034866}
+  selectButtonText: {fileID: 349696383}
 --- !u!4 &1005342377
 Transform:
   m_ObjectHideFlags: 0

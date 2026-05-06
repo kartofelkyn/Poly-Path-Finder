@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lives = 1;
+            lives = 8;
             score = 0;
             scoreAdd = 0;
             difficultyText.text = "Easy";
@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour
 
     public void PauseResume()
     {
+        if (state != GameState.Playing) return;
+
         if (Time.timeScale == 1f)
         {
             Time.timeScale = 0f;
@@ -127,7 +129,7 @@ public class GameManager : MonoBehaviour
             settingsPanel.SetActive(false);
         }
     }
-    
+
     public void RestartGame()
     {
         FootstepManager.instance.StopFootsteps();
@@ -150,6 +152,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        state = GameState.GameOver;
         Time.timeScale = 0f;
         FootstepManager.instance.StopFootsteps();
         FinalScoreUI();
@@ -159,6 +162,7 @@ public class GameManager : MonoBehaviour
     }
     public void QuizComplete()
     {
+        state = GameState.Victory;
         Time.timeScale = 0f;
         FootstepManager.instance.StopFootsteps();
         FinalScoreUI();

@@ -521,11 +521,11 @@ Transform:
   m_GameObject: {fileID: 74649193}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.051860094, y: 4.067967, z: 14.939999}
+  m_LocalPosition: {x: 1.1681399, y: 2, z: -21.23}
   m_LocalScale: {x: 6, y: 5, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1264751024}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &74649195
 MonoBehaviour:
@@ -1702,7 +1702,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 14, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250265824
 MonoBehaviour:
@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.23137257, b: 0.050980397, a: 0}
+  m_Color: {r: 0.21960786, g: 0.23137257, b: 0.050980397, a: 0.53333336}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1865,16 +1865,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1391120301}
     m_Modifications:
     - target: {fileID: 1980066899382587591, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.884421
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980066899382587591, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10.642121
+      value: 10.660213
       objectReference: {fileID: 0}
     - target: {fileID: 1980066899382587591, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0399997
+      value: -2.911
       objectReference: {fileID: 0}
     - target: {fileID: 1980066899382587591, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 82.00787
+      value: 82.0627
       objectReference: {fileID: 0}
     - target: {fileID: 5506337752045020962, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1926,7 +1930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304194218545365115, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 82.0079
+      value: 82.0627
       objectReference: {fileID: 0}
     - target: {fileID: 7709851593545066488, guid: 8fc2db8ddd735b14a906e5168e07ed05, type: 3}
       propertyPath: m_Name
@@ -2003,8 +2007,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1391120301}
     m_Modifications:
     - target: {fileID: 1216792886174250236, guid: 242a3930e514d6a4eb765aeaf4c5d991, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0206734
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216792886174250236, guid: 242a3930e514d6a4eb765aeaf4c5d991, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21701431
+      value: 0.1403
       objectReference: {fileID: 0}
     - target: {fileID: 1216792886174250236, guid: 242a3930e514d6a4eb765aeaf4c5d991, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2068,7 +2076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553106835854522514, guid: 242a3930e514d6a4eb765aeaf4c5d991, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2996488
+      value: 1.3080965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2635,7 +2643,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -2688,13 +2696,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.5567909, y: -0.21149263, z: 0.14919165, w: 0.78930134}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.4, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6484,7 +6492,7 @@ GameObject:
   - component: {fileID: 969716818}
   - component: {fileID: 969716817}
   m_Layer: 5
-  m_Name: QuitTxt
+  m_Name: BtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8409,7 +8417,6 @@ Transform:
   - {fileID: 1388095323}
   - {fileID: 1561582316}
   - {fileID: 1784624639}
-  - {fileID: 74649194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1264751025
@@ -10833,7 +10840,7 @@ GameObject:
   - component: {fileID: 1669703490}
   - component: {fileID: 1669703489}
   m_Layer: 5
-  m_Name: RestartTxt
+  m_Name: BtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12784,7 +12791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2000394968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892819461}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: showSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2000394968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13267,7 +13286,7 @@ GameObject:
   - component: {fileID: 2095980710}
   - component: {fileID: 2095980709}
   m_Layer: 5
-  m_Name: SettingBtn
+  m_Name: BtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13931,6 +13950,7 @@ SceneRoots:
   - {fileID: 960389346}
   - {fileID: 1856654222}
   - {fileID: 475424394}
+  - {fileID: 74649194}
   - {fileID: 1264751024}
   - {fileID: 88693005}
   - {fileID: 1352725666}

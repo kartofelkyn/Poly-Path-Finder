@@ -30,18 +30,15 @@ public class MainMenuControl : MonoBehaviour
 
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
-        mainMenuPanel.SetActive(false);
-        characterSelectorPanel.SetActive(false);
-        settingsPanel.SetActive(true);
+
+        StartCoroutine(SwitchPanel(settingsPanel));
     }
     public void showCharacterSelector()
     {
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
-        mainMenuPanel.SetActive(false);
-        settingsPanel.SetActive(false);
-        characterSelectorPanel.SetActive(true);
 
+        StartCoroutine(SwitchPanel(characterSelectorPanel));
     }
     public void backToMainMenu()
     {
@@ -50,9 +47,7 @@ public class MainMenuControl : MonoBehaviour
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
 
-        settingsPanel.SetActive(false);
-        characterSelectorPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
+        StartCoroutine(SwitchPanel(mainMenuPanel));
     }
     public void QuitGame()
     {
@@ -65,5 +60,15 @@ public class MainMenuControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         SceneTransitionManager.Instance.BeginTransition("DifficultySelection");
+    }
+    IEnumerator SwitchPanel(GameObject panelToShow)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        mainMenuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        characterSelectorPanel.SetActive(false);
+
+        panelToShow.SetActive(true);
     }
 }
