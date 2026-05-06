@@ -44,16 +44,6 @@
         "com.unity.test-framework.performance": "3.0.3"
       },
       "url": "https://packages.unity.com"
-<<<<<<< Updated upstream
-    },
-    "com.unity.device-simulator.devices": {
-      "version": "1.0.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-=======
->>>>>>> Stashed changes
     },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
@@ -180,11 +170,7 @@
     },
     "com.unity.shadergraph": {
       "version": "17.3.0",
-<<<<<<< Updated upstream
-      "depth": 0,
-=======
       "depth": 1,
->>>>>>> Stashed changes
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "17.3.0",
