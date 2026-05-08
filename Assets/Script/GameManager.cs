@@ -94,12 +94,12 @@ public class GameManager : MonoBehaviour
         score += totalScore;
 
         Debug.Log("Score Added: " + totalScore + " (Base: " + amount + ", ScoreAdd: " + scoreAdd + ", StreakBonus: " + (streakNumber * streakAddition) + ")");
-        
+
         streakNumber++;
 
         if (PopupManager.Instance != null)
         {
-            PopupManager.Instance.ShowScore(score);
+            PopupManager.Instance.ShowScore(totalScore);
             PopupManager.Instance.ShowStreak(streakNumber);
         }
 
@@ -217,22 +217,28 @@ public class GameManager : MonoBehaviour
         currentSpeed = 0f;
         Debug.Log("Game Over!");
     }
+
     public void QuizComplete()
     {
         state = GameState.Victory;
         Time.timeScale = 0f;
         FootstepManager.instance.StopFootsteps();
-        FinalScoreUI();
+
+
         quizCompletePanel.SetActive(true);
         inputManager.SetActive(false);
+
+        FinalScoreUI();
+
         currentSpeed = 0f;
         Debug.Log("Quiz Complete!");
     }
+
     void FinalScoreUI()
     {
         GamePlaySound.instance.GameEnd();
         SettingsManager.Instance.SetHighScore(score);
-
+        Debug.Log("Final score"+ score);
         currentScoreText.text = score.ToString("D5");
         highScoreText.text = SettingsManager.Instance.highScore.ToString("D5");
 
