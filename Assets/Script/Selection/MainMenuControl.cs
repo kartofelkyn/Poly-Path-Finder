@@ -63,7 +63,7 @@ public class MainMenuControl : MonoBehaviour
     }
     IEnumerator SwitchPanel(GameObject panelToShow)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.35f);
 
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(false);

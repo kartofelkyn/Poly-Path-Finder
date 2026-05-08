@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 1926928798061842715}
   m_Layer: 0
   m_Name: New_Section_Trigger
-  m_TagString: Trigger
+  m_TagString: SectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

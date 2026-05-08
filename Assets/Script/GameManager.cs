@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int score = 0;
     public int lives = 15;
+    public int scoreAdd = 100;
+    public int streakNumber = 0;
+    public int streakAddition = 50;
+
     public float currentSpeed = 2f;
     public float maxSpeed = 50f;
     public float speedIncreaseRate = 0.1f;
@@ -25,10 +29,10 @@ public class GameManager : MonoBehaviour
     public GameObject pauseResumePanel;
     public GameObject quizCompletePanel;
     public GameObject settingsPanel;
+    public GameObject inputManager;
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI highScoreText;
-    public int scoreAdd = 100;
     public GameState state = GameState.Intro;
     private void Awake()
     {
@@ -57,7 +61,7 @@ public class GameManager : MonoBehaviour
             lives = 10;
             score = 0;
             scoreAdd = 50;
-            speedIncreaseRate = 0.10f;
+            speedIncreaseRate = 0f;
             difficultyText.text = "AI Mode";
         }
         else
@@ -65,9 +69,11 @@ public class GameManager : MonoBehaviour
             lives = 8;
             score = 0;
             scoreAdd = 0;
+            speedIncreaseRate = 0f;
             difficultyText.text = "Easy";
         }
         FootstepManager.instance.StartFootsteps();
+        inputManager.SetActive(true);
         gameOverPanel.SetActive(false);
         quizCompletePanel.SetActive(false);
         UpdateUI();
@@ -83,13 +89,60 @@ public class GameManager : MonoBehaviour
     }
     public void AddScore(int amount)
     {
-        score += amount + scoreAdd;
+
+        int totalScore = amount + scoreAdd + (streakNumber * streakAddition);
+        score += totalScore;
+
+        Debug.Log("Score Added: " + totalScore + " (Base: " + amount + ", ScoreAdd: " + scoreAdd + ", StreakBonus: " + (streakNumber * streakAddition) + ")");
+        
+        streakNumber++;
+
+        if (PopupManager.Instance != null)
+        {
+            PopupManager.Instance.ShowScore(score);
+            PopupManager.Instance.ShowStreak(streakNumber);
+        }
+
+
         UpdateUI();
     }
+    public void PowerupAddScore(int amount)
+    {
+        score += amount;
+        if (PopupManager.Instance != null)
+        {
+            PopupManager.Instance.ShowScore(score);
+        }
+        UpdateUI();
+    }
+    public void PowerupAddStreak(int amount)
+    {
+        streakNumber += amount;
 
+        if (PopupManager.Instance != null)
+        {
+            PopupManager.Instance.ShowStreak(streakNumber);
+        }
+        UpdateUI();
+    }
+    public void PowerupAddLife(int amount)
+    {
+        lives += amount;
+        if (PopupManager.Instance != null)
+        {
+            PopupManager.Instance.ShowLives(+1);
+        }
+        UpdateUI();
+    }
     public void TakeDamage(int amount)
     {
         lives -= amount;
+        streakNumber = 0;
+        if (PopupManager.Instance != null)
+        {
+            PopupManager.Instance.ShowStreak(streakNumber);
+            PopupManager.Instance.ShowLives(-1);
+        }
         if (lives <= 0)
         {
             UpdateUI();
@@ -106,17 +159,20 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             FootstepManager.instance.StopFootsteps();
+            inputManager.SetActive(false);
             pauseResumePanel.SetActive(true);
         }
         else
         {
             Time.timeScale = 1f;
             FootstepManager.instance.StartFootsteps();
+            inputManager.SetActive(true);
             pauseResumePanel.SetActive(false);
         }
     }
     public void showSettings()
     {
+        Debug.Log("setting active");
         if (Time.timeScale == 0f)
         {
             settingsPanel.SetActive(true);
@@ -157,6 +213,7 @@ public class GameManager : MonoBehaviour
         FootstepManager.instance.StopFootsteps();
         FinalScoreUI();
         gameOverPanel.SetActive(true);
+        inputManager.SetActive(false);
         currentSpeed = 0f;
         Debug.Log("Game Over!");
     }
@@ -167,6 +224,7 @@ public class GameManager : MonoBehaviour
         FootstepManager.instance.StopFootsteps();
         FinalScoreUI();
         quizCompletePanel.SetActive(true);
+        inputManager.SetActive(false);
         currentSpeed = 0f;
         Debug.Log("Quiz Complete!");
     }
@@ -179,7 +237,7 @@ public class GameManager : MonoBehaviour
         highScoreText.text = SettingsManager.Instance.highScore.ToString("D5");
 
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         scoreText.text = score.ToString();
         liveText.text = lives.ToString();

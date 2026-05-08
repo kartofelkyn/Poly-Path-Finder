@@ -43,6 +43,13 @@ public class GamePlaySound : MonoBehaviour
     {
         if (clip == null) return;
 
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(clip);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+        }
     }
 }

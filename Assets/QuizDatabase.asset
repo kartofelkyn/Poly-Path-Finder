@@ -90,7 +90,8 @@ MonoBehaviour:
     - ADD
     correctIndex: 0
     difficulty: 0
-  - question: 'CRUD: Create, Read, Update, Delete'
+  - question: Represents the four essential operations for managing persistent data
+      in software applications and databases
     answers:
     - CRUD
     - CRUP

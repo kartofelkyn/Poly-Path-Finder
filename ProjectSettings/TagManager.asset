@@ -9,6 +9,7 @@ TagManager:
   - Choices
   - GenerateQuiz
   - StartTrack
+  - SectionTrigger
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7629838093345190953}
   - component: {fileID: 262013774115713072}
   - component: {fileID: 5368236410152103651}
+  - component: {fileID: 4865640053680753416}
   - component: {fileID: 8364962118954595834}
   m_Layer: 0
   m_Name: New_Quiz_Trigger
@@ -67,6 +68,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd341fe0bb36d842a238369c2e43518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackMovement
+--- !u!114 &4865640053680753416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100716609772945347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f0a3b74282b074799cfc5348fde55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUPSpawner
+  powerUpPrefabs:
+  - {fileID: 6712149191416083428, guid: cb7b6491122ef10428e29a5c2b15a8d3, type: 3}
+  - {fileID: 6712149191416083428, guid: 01a20e43f27e8964b8df44730d226c74, type: 3}
+  - {fileID: 6712149191416083428, guid: b4e8e97afcee917468f7c86d27be87e7, type: 3}
 --- !u!114 &8364962118954595834
 MonoBehaviour:
   m_ObjectHideFlags: 0

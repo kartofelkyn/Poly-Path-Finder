@@ -46,7 +46,7 @@ public class LevelSelection : MonoBehaviour
     }
     IEnumerator SwitchScene(string sceneName)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.27f);
         SceneTransitionManager.Instance.BeginTransition(sceneName);
     }
 }

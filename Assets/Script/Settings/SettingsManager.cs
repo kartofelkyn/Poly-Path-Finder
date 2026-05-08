@@ -14,6 +14,9 @@ public class SettingsManager : MonoBehaviour
     public float musicVolume;
     public float soundVolume;
 
+    [Header("UI Popup")]
+    public GameObject settingsPopupPrefab;
+    public Transform settingsPopupContainer;
     private void Awake()
     {
         if (Instance == null)
@@ -92,7 +95,15 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("SoundVolume", soundVolume);
 
         PlayerPrefs.Save();
-
+        ShowSettingsPopup("Saved Settings");
         Debug.Log("Settings Saved!");
+    }
+    public void ShowSettingsPopup(string message)
+    {
+        GameObject obj =
+            Instantiate(settingsPopupPrefab, settingsPopupContainer);
+
+        obj.GetComponent<SettingsPopup>()
+            .Activate(message);
     }
 }

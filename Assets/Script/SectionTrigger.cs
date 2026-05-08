@@ -20,8 +20,9 @@ public class SectionTrigger : MonoBehaviour
             Vector3 spawnPos = other.transform.position + new Vector3(1, -2, 29f);
             Instantiate(TrackManager.Instance.GetRandomTrackSection(), spawnPos, Quaternion.identity);
         }
-        else if (other.gameObject.CompareTag("Trigger"))
+        else if (other.gameObject.CompareTag("SectionTrigger"))
         {
+            Debug.Log("Section Triggered other.GameObject: " + other.gameObject.name);
             Vector3 spawnPos = other.transform.position + new Vector3(0, 0, 111f);
             Instantiate(TrackManager.Instance.GetRandomTrackSection(), spawnPos, Quaternion.identity);
         }
