@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+/// <summary>
+/// This script displays random SQL fun facts on the loading screen.
+/// It uses a TextMeshProUGUI component to show the facts and changes them at regular intervals.
+/// The facts are stored in a list and randomly selected to keep the loading screen engaging for users
+/// during scene transitions.
+/// </summary>
+/// 
 public class LoadingSQLFunFact : MonoBehaviour
 {
     public TextMeshProUGUI factText;

@@ -1,6 +1,13 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This script manages the settings saved popup that 
+/// appears when the user saves their settings in the game.
+/// It displays a message indicating that the settings 
+/// have been saved and then fades out after a short
+/// </summary>
+
 public class SettingsPopup : MonoBehaviour
 {
     public TextMeshProUGUI text;

@@ -2,6 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script manages the main menu interactions, including starting the game,
+/// navigating to settings and character selection panels, and quitting the game.
+/// It also handles playing click sounds and menu music, as well as transitioning 
+/// between different UI panels smoothly.
+/// </summary>
+
 public class MainMenuControl : MonoBehaviour
 {
     public AudioClip clickSound;
@@ -9,6 +16,7 @@ public class MainMenuControl : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject mainMenuPanel;
     public GameObject characterSelectorPanel;
+
     void Start()
     {
         MusicManager.Instance.PlayMusic(menuMusic);
@@ -17,22 +25,20 @@ public class MainMenuControl : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Start Game Clicked");
-
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
 
         StartCoroutine(StartGameRoutine());
     }
+
     public void showSettings()
     {
-        Debug.Log("Settings Clicked");
-
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
 
         StartCoroutine(SwitchPanel(settingsPanel));
     }
+
     public void showCharacterSelector()
     {
         if (clickSound != null)
@@ -40,15 +46,15 @@ public class MainMenuControl : MonoBehaviour
 
         StartCoroutine(SwitchPanel(characterSelectorPanel));
     }
+
     public void backToMainMenu()
     {
-        Debug.Log("Back to Main Menu Clicked");
-
         if (clickSound != null)
             AudioManager.Instance.PlaySFX(clickSound);
 
         StartCoroutine(SwitchPanel(mainMenuPanel));
     }
+
     public void QuitGame()
     {
         if (clickSound != null)

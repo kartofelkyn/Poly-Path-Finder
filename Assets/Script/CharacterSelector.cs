@@ -1,6 +1,15 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This script manages the character selection process in the game. 
+/// It allows players to cycle through available characters, view 
+/// their names, and select one for use in the game. The selected character 
+/// is saved using PlayerPrefs, allowing the choice to persist across game 
+/// sessions. The script also updates the UI to reflect the currently 
+/// selected character and provides feedback when a character is selected.
+/// </summary>
+
 public class CharacterSelector : MonoBehaviour
 {
     public CharacterData[] characters;
@@ -50,6 +59,5 @@ public class CharacterSelector : MonoBehaviour
         PlayerPrefs.SetInt("SelectedCharacter", index);
         PlayerPrefs.SetString("SelectedCharacterName", characters[index].characterName);
         selectButtonText.text = "Selected";
-        Debug.Log("Selected: " + characters[index].characterName);
     }
 }

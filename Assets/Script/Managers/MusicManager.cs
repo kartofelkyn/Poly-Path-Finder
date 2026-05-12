@@ -1,6 +1,14 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// This script manages the audio for the game, specifically for music.
+/// It implements a singleton pattern to allow easy access from other scripts without 
+/// needing direct references.
+/// The MusicManager provides methods to play music and control its volume, ensuring 
+/// a consistent audio experience throughout the game.
+/// </summary>
+/// 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
@@ -10,6 +18,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource musicSource;
     private const float baseMusicMultiplier = 0.5f;
     private const float baseSFXMultiplier = 0.2f;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)

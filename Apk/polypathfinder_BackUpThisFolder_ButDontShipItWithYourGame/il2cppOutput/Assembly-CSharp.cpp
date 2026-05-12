@@ -591,6 +591,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralA87D266F5AAE1AF5998468D25833A8C6AD50D4FD
 IL2CPP_EXTERN_C String_t* _stringLiteralAB3448E21FA53C63C06270903A13B17D02935BE0;
 IL2CPP_EXTERN_C String_t* _stringLiteralAEA5F0654BC026BD08644A95DC4801F274E7F536;
 IL2CPP_EXTERN_C String_t* _stringLiteralAEC0659FC64CBCCA9A1D49DE4D9D204C2D374A5E;
+IL2CPP_EXTERN_C String_t* _stringLiteralB13154005B13855D67FE3178EE737771CA440430;
 IL2CPP_EXTERN_C String_t* _stringLiteralB33B5752F1008A70072F3A04A8E5F7EFA11672C8;
 IL2CPP_EXTERN_C String_t* _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D;
 IL2CPP_EXTERN_C String_t* _stringLiteralB5793A0486CA0270FF49AD51E2176B4E15A6F700;
@@ -8779,13 +8780,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_AddScore_m7F9C51FCFD3F61B8B6
 		L_26 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_25, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_26)
 		{
-			goto IL_00d3;
+			goto IL_00ce;
 		}
 	}
 	{
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:102>
 		PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C* L_27 = ((PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C_StaticFields*)il2cpp_codegen_static_fields_for(PopupManager_tABFC2AA7056D01702EEAE5CB67EA32B88F4EF41C_il2cpp_TypeInfo_var))->___Instance;
-		int32_t L_28 = __this->___score;
+		int32_t L_28 = V_0;
 		NullCheck(L_27);
 		PopupManager_ShowScore_mF92835E1F881DF62A643F20CA2CAA10CA2FAED10(L_27, L_28, NULL);
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:103>
@@ -8795,7 +8796,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_AddScore_m7F9C51FCFD3F61B8B6
 		PopupManager_ShowStreak_mB650A65FD76DAF7912C76251ED9958675AA5841E(L_29, L_30, NULL);
 	}
 
-IL_00d3:
+IL_00ce:
 	{
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:107>
 		GameManager_UpdateUI_m592EA278752B47E9A40AE3B0DCC0BE8BAB0D472E(__this, NULL);
@@ -9285,30 +9286,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_QuizComplete_mC86601370E3A3F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:222>
-		__this->___state = 4;
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:223>
-		Time_set_timeScale_mEF84EE4B2376A458387648079B426B267862D331((0.0f), NULL);
+		__this->___state = 4;
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:224>
+		Time_set_timeScale_mEF84EE4B2376A458387648079B426B267862D331((0.0f), NULL);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:225>
 		FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C* L_0 = ((FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C_StaticFields*)il2cpp_codegen_static_fields_for(FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C_il2cpp_TypeInfo_var))->___instance;
 		NullCheck(L_0);
 		FootstepManager_StopFootsteps_m5CF4FDF37F73E411B2EF39D21F5F115B0E3BB5BB(L_0, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:225>
-		GameManager_FinalScoreUI_mF9A2888D68B5090B0661F7001A9D6B0073AEDCB2(__this, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:226>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:228>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___quizCompletePanel;
 		NullCheck(L_1);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_1, (bool)1, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:227>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:229>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___inputManager;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:228>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:231>
+		GameManager_FinalScoreUI_mF9A2888D68B5090B0661F7001A9D6B0073AEDCB2(__this, NULL);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:233>
 		__this->___currentSpeed = (0.0f);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:229>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:234>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralAEA5F0654BC026BD08644A95DC4801F274E7F536, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:230>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:235>
 		return;
 	}
 }
@@ -9318,38 +9319,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_FinalScoreUI_mF9A2888D68B509
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GamePlaySound_tDDCEF53D104703338FCBDDCD4085CD05C12986C8_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral05A28F1E8A745228C0495F5A5624794FEACD9C32);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB13154005B13855D67FE3178EE737771CA440430);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:233>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:239>
 		GamePlaySound_tDDCEF53D104703338FCBDDCD4085CD05C12986C8* L_0 = ((GamePlaySound_tDDCEF53D104703338FCBDDCD4085CD05C12986C8_StaticFields*)il2cpp_codegen_static_fields_for(GamePlaySound_tDDCEF53D104703338FCBDDCD4085CD05C12986C8_il2cpp_TypeInfo_var))->___instance;
 		NullCheck(L_0);
 		GamePlaySound_GameEnd_m93206DF77FAACD6C570334F67DC533C674134025(L_0, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:234>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:240>
 		SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B* L_1 = ((SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_StaticFields*)il2cpp_codegen_static_fields_for(SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_il2cpp_TypeInfo_var))->___Instance;
 		int32_t L_2 = __this->___score;
 		NullCheck(L_1);
 		SettingsManager_SetHighScore_mF4D731028DDC3C52DA07E03F5CA492F91FEE38EB(L_1, L_2, NULL);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:236>
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_3 = __this->___currentScoreText;
-		int32_t* L_4 = (int32_t*)(&__this->___score);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:241>
+		int32_t* L_3 = (int32_t*)(&__this->___score);
+		String_t* L_4;
+		L_4 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(L_3, NULL);
 		String_t* L_5;
-		L_5 = Int32_ToString_m967AECC237535C552A97A80C7875E31B98496CA9(L_4, _stringLiteral05A28F1E8A745228C0495F5A5624794FEACD9C32, NULL);
-		NullCheck(L_3);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_3, L_5);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:237>
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_6 = __this->___highScoreText;
-		SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B* L_7 = ((SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_StaticFields*)il2cpp_codegen_static_fields_for(SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_il2cpp_TypeInfo_var))->___Instance;
-		NullCheck(L_7);
-		int32_t* L_8 = (int32_t*)(&L_7->___highScore);
-		String_t* L_9;
-		L_9 = Int32_ToString_m967AECC237535C552A97A80C7875E31B98496CA9(L_8, _stringLiteral05A28F1E8A745228C0495F5A5624794FEACD9C32, NULL);
+		L_5 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralB13154005B13855D67FE3178EE737771CA440430, L_4, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_5, NULL);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:242>
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_6 = __this->___currentScoreText;
+		int32_t* L_7 = (int32_t*)(&__this->___score);
+		String_t* L_8;
+		L_8 = Int32_ToString_m967AECC237535C552A97A80C7875E31B98496CA9(L_7, _stringLiteral05A28F1E8A745228C0495F5A5624794FEACD9C32, NULL);
 		NullCheck(L_6);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_6, L_9);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:239>
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_6, L_8);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:243>
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_9 = __this->___highScoreText;
+		SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B* L_10 = ((SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_StaticFields*)il2cpp_codegen_static_fields_for(SettingsManager_t4EE243AF21C0F2368EA2029BEAE2539757C3354B_il2cpp_TypeInfo_var))->___Instance;
+		NullCheck(L_10);
+		int32_t* L_11 = (int32_t*)(&L_10->___highScore);
+		String_t* L_12;
+		L_12 = Int32_ToString_m967AECC237535C552A97A80C7875E31B98496CA9(L_11, _stringLiteral05A28F1E8A745228C0495F5A5624794FEACD9C32, NULL);
+		NullCheck(L_9);
+		VirtualActionInvoker1< String_t* >::Invoke(66, L_9, L_12);
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:245>
 		return;
 	}
 }
@@ -9357,21 +9368,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_FinalScoreUI_mF9A2888D68B509
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_UpdateUI_m592EA278752B47E9A40AE3B0DCC0BE8BAB0D472E (GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:242>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:248>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_0 = __this->___scoreText;
 		int32_t* L_1 = (int32_t*)(&__this->___score);
 		String_t* L_2;
 		L_2 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(L_1, NULL);
 		NullCheck(L_0);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_0, L_2);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:243>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:249>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_3 = __this->___liveText;
 		int32_t* L_4 = (int32_t*)(&__this->___lives);
 		String_t* L_5;
 		L_5 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(L_4, NULL);
 		NullCheck(L_3);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_3, L_5);
-		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:244>
+		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:250>
 		return;
 	}
 }
