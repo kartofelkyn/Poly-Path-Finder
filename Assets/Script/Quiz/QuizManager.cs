@@ -32,6 +32,9 @@ public class QuizManager : MonoBehaviour
     public float distanceBetweenGates = 0f;
     private float distanceBetweenPlayer = 20f;
     private int currentQuestionIndex = 0;
+    [Header("Current Quiz Info")]
+    public string currentQuestion;
+    public string currentCorrectAnswer;
     private List<Quiz> shuffledQuizzes;
     public static QuizManager Instance;
     private List<Quiz> aiQuizzes;
@@ -141,6 +144,10 @@ public class QuizManager : MonoBehaviour
 
         // Select the next quiz question and answers
         Quiz selectedQuiz = shuffledQuizzes[currentQuestionIndex];
+
+        currentQuestion = selectedQuiz.question;
+        currentCorrectAnswer = selectedQuiz.answers[selectedQuiz.correctIndex];
+
         currentQuestionIndex++;
 
         // Display the question text in the UI
@@ -161,7 +168,7 @@ public class QuizManager : MonoBehaviour
 
         // Spawn gates for each answer choice at increasing distances from the player
         float currentZ = distanceBetweenPlayer;
-        
+
         // This loop spawns the gates for the quiz answers, positioning them at random X and Y 
         // coordinates while increasing the Z coordinate to space them out along the player's path. 
         // Each gate is set up with the corresponding answer choice and its index for later checking 

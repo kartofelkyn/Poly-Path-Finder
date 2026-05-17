@@ -23,26 +23,35 @@ public class RenderQuizChoices : MonoBehaviour
         // store which answer this gate represents
         this.index = myIndex;
     }
-    
+
     public void OnLaneHit()
     {
         if (QuizManager.Instance.questionAnswered) return;
-        Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
+        //Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
+
         QuizManager.Instance.questionAnswered = true;
-        Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
+
+        //Debug.Log($"Lane hit: {QuizManager.Instance.questionAnswered}");
         if (index == correctIndex)
         {
             GameManager.Instance.AddScore(100);
             GamePlaySound.instance.AnswerRight();
             QuizManager.Instance.checkIfAnswerCalled = true;
-            Debug.Log("Correct Answer!");
+            QuestionUIManager.Instance.questionText.text =
+            "You got it right!" +
+            "\nCorrect Answer: " + QuizManager.Instance.currentCorrectAnswer;
+            
+            //Debug.Log("Correct Answer!");
         }
         else
         {
             GameManager.Instance.TakeDamage(1);
             GamePlaySound.instance.AnswerWrong();
             QuizManager.Instance.checkIfAnswerCalled = true;
-            Debug.Log("Wrong Answer!");
+            QuestionUIManager.Instance.questionText.text =
+            "You got it wrong!" +
+            "\nCorrect Answer: " + QuizManager.Instance.currentCorrectAnswer;
+            //Debug.Log("Wrong Answer!");
         }
     }
 }
