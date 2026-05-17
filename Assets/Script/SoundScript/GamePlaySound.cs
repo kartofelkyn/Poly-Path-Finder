@@ -1,5 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// This script manages the gameplay sounds for the game. It uses a singleton pattern to allow easy
+/// access from other scripts. It provides methods to play specific sounds for right answers, wrong answers, 
+/// game end, and jumping. The sounds are played through an AudioManager if available, or directly at the camera's position 
+/// if the AudioManager is not present. This allows for consistent sound effects throughout the game, and it centralizes 
+/// the management of gameplay-related sounds in one place for easier maintenance and updates.
+/// </summary>
+/// 
 public class GamePlaySound : MonoBehaviour
 {
     public static GamePlaySound instance;

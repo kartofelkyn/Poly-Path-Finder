@@ -1,6 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// This script manages the player's movement in the game, including lane switching, 
+/// jumping, and running bounce effects.
+/// It uses a combination of smooth damping for lane movement, sine wave calculations 
+/// for bounce effects, and a simple state machine for handling jump and lane change states. 
+/// The script also includes an input buffering system for left and right movements, allowing 
+/// for responsive controls even when the player is in the middle of a lane change. 
+/// Additionally, it handles camera movement during the intro sequence and applies tilt effects 
+/// when changing lanes for added visual feedback. By centralizing all player movement logic in 
+/// this script, it simplifies the management of player actions and ensures a cohesive movement 
+/// experience throughout the game.
+/// </summary>
+
 public class PlayerMove : MonoBehaviour
 {
     [Header("Lane Settings")]
@@ -86,6 +99,13 @@ public class PlayerMove : MonoBehaviour
         HandleJumpAndBounce();
         HandleTilt();
     }
+
+    /// <summary>
+    /// Handles the player's movement during the intro sequence, where the player runs forward with a bounce effect while the 
+    /// camera moves upwards and backwards. Once the player reaches a certain position, the game state changes to Playing and 
+    /// the camera is set to its final position and rotation for gameplay. This creates an engaging introduction to the game, 
+    /// setting the tone and atmosphere before the player starts controlling their character.
+    /// </summary>
     void IntroMovement()
     {
         timeCounter += Time.deltaTime;
@@ -100,7 +120,7 @@ public class PlayerMove : MonoBehaviour
             transform.position.z
         );
         mainCamera.position += new Vector3(0, runSpeed * Time.deltaTime * introCameraSpeedY, Time.deltaTime * introCameraSpeedZ);
-        if (transform.position.z >= -5.48f)
+        if (transform.position.z >= -5.48f) // Once the player reaches the target Z position, switch to Playing state and set the camera to its final position and rotation for gameplay
         {
             GameManager.Instance.state = GameState.Playing;
             mainCamera.position = new Vector3(1f, 3.4f, -9.43f);

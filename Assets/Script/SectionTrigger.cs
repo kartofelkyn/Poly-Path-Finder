@@ -15,6 +15,11 @@ public class SectionTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        // Spawn a randomized track when the trigger with tag "StartTrack" is reached
+        // It added the position of the trigger + a new Vector of x, y, z to spawn the track in the right position
+        // Else if the trigger with tag "SectionTrigger" is reached, it will spawn a new track section at the 
+        // position of the trigger + a new Vector of x, y, z to spawn the track in the right position
         if(other.gameObject.CompareTag("StartTrack"))
         {
             Vector3 spawnPos = other.transform.position + new Vector3(1, -2, 29f);

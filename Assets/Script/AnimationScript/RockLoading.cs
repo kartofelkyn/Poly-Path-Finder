@@ -2,6 +2,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script controls the animation of the rocks during the loading screen. 
+/// It creates a diagonal wave effect by changing the color of the rock images 
+/// in a pattern based on their row and column positions.
+/// The animation runs in a loop, continuously updating the colors of the rocks 
+/// to create a dynamic and visually appealing loading screen. 
+/// The speed of the animation can be adjusted using the speed variable, allowing 
+/// for customization of the loading experience. This script adds an engaging visual 
+/// element to the loading screen, enhancing the overall user experience while waiting 
+/// for the game to load.
+/// </summary>
 public class RockLoading : MonoBehaviour
 {
     public int rows = 6;
@@ -19,7 +30,8 @@ public class RockLoading : MonoBehaviour
         rocks = GetComponentsInChildren<Image>();
         StartCoroutine(Animate());
     }
-
+    
+    // Creates a diagonal wave effect by changing the color of the rock images in a pattern based on their row and column positions.
     IEnumerator Animate()
     {
         while (true)

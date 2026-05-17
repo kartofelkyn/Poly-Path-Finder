@@ -1,5 +1,14 @@
 using UnityEngine;
 
+/// <summary>
+/// This script defines the data structure for quizzes in the game, including the question, 
+/// possible answers, the index of the correct answer, and the difficulty level. 
+/// It also provides a method to filter quizzes based on their difficulty level, allowing 
+/// for dynamic selection of quizzes during gameplay. By using a ScriptableObject, it allows 
+/// for easy creation and management of quiz data within the Unity editor, making it simple to 
+/// add new quizzes or modify existing ones without needing to change the code.
+/// </summary>
+ 
 public enum DifficultyLevel { Easy, Medium, Hard }
 
 [System.Serializable]

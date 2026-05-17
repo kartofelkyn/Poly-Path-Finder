@@ -5,7 +5,9 @@ using UnityEngine.Sprites;
 #if UNITY_2017_4 || UNITY_2018_2_OR_NEWER
 using UnityEngine.U2D;
 #endif
-
+/// <summary>
+/// A UI graphic that displays a gradient color across its area.
+/// </summary>
 [RequireComponent(typeof(CanvasRenderer))]
 [AddComponentMenu("UI/Gradient Graphic", 12)]
 public class GradientGraphic : MaskableGraphic, ILayoutElement

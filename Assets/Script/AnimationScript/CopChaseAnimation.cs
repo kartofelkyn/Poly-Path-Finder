@@ -1,5 +1,14 @@
 using UnityEngine;
 
+/// <summary>
+/// This script controls the animation of the cop chasing the player in the intro sequence.
+/// The cop moves forward until it reaches a certain point, at which it stops and bounces up and down. 
+/// The bounce effect is desynchronized between multiple cop instances by using a random time offset, 
+/// creating a more natural and dynamic animation. Once the cop reaches the stop point, it will be destroyed 
+/// after a short delay, allowing the intro sequence to transition smoothly into the gameplay. This script adds an 
+/// engaging visual element to the intro, setting the tone for the game and creating anticipation for the player as 
+/// they start their journey.  
+/// </summary>
 public class CopChaseAnimation : MonoBehaviour
 {
     [Header("Follow")]
