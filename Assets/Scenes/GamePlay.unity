@@ -6572,6 +6572,8 @@ MonoBehaviour:
   questionAnswered: 0
   checkIfAnswerCalled: 0
   distanceBetweenGates: 50
+  currentQuestion: 
+  currentCorrectAnswer: 
   isInitialized: 0
 --- !u!65 &923989286
 BoxCollider:
