@@ -26,11 +26,14 @@ public class TrackMovement : MonoBehaviour
     // It checks if the track pieces collide with a trigger with tag "Destroy", 
     // if it does, it will destroy the track pieces game object to prevent memory 
     // overflow and keep the game running smoothly.
+    /*
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Touched: " + other.name);
         if (other.gameObject.CompareTag("Destroy"))
         {
             Destroy(gameObject);
         }
     }
+    */
 }
