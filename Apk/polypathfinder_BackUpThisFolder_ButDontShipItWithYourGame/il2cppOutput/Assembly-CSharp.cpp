@@ -9203,7 +9203,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_Start_m87A71D65F3171A58DBDDB
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_2 = __this->___difficultyText;
 		NullCheck(L_2);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_2, _stringLiteral594DD0BF272B5892AA7F91E62C66BCD2666E72BB);
-		goto IL_00f8;
+		goto IL_00f9;
 	}
 
 IL_0048:
@@ -9230,7 +9230,7 @@ IL_0048:
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_5 = __this->___difficultyText;
 		NullCheck(L_5);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_5, _stringLiteralFE566FEFE77E0B16136ADCE410AD98FF054E2937);
-		goto IL_00f8;
+		goto IL_00f9;
 	}
 
 IL_008d:
@@ -9256,26 +9256,26 @@ IL_008d:
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_7 = __this->___difficultyText;
 		NullCheck(L_7);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_7, _stringLiteral25718F22F228E1BC4F58CEF5C8C971679E6D9A9C);
-		goto IL_00f8;
+		goto IL_00f9;
 	}
 
 IL_00c8:
 	{
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:75>
-		__this->___lives = 8;
+		__this->___lives = ((int32_t)50);
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:76>
 		__this->___score = 0;
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:77>
 		__this->___scoreAdd = 0;
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:78>
-		__this->___speedIncreaseRate = (0.0f);
+		__this->___speedIncreaseRate = (0.200000003f);
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:79>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_8 = __this->___difficultyText;
 		NullCheck(L_8);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_8, _stringLiteral7479A72B853B4FDBFCA88205F6F2D9437EE4ED7F);
 	}
 
-IL_00f8:
+IL_00f9:
 	{
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/GameManager.cs:82>
 		FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C* L_9 = ((FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C_StaticFields*)il2cpp_codegen_static_fields_for(FootstepManager_tAFEA8BDD2B7DBAF795F59C19635191783F251D2C_il2cpp_TypeInfo_var))->___instance;
@@ -12931,7 +12931,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PowerUPSpawner_SpawnPowerUp_m887B1C76755
 		V_1 = L_0;
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/PowerUP/PowerUPSpawner.cs:46>
 		float L_1 = V_1;
-		if ((!(((float)L_1) <= ((float)(5.0f)))))
+		if ((!(((float)L_1) <= ((float)(10.0f)))))
 		{
 			goto IL_001e;
 		}
@@ -12946,7 +12946,7 @@ IL_001e:
 	{
 		//<source_info:F:/GitHub/Poly-Path-Finder/Assets/Script/PowerUP/PowerUPSpawner.cs:51>
 		float L_2 = V_1;
-		if ((!(((float)L_2) <= ((float)(35.0f)))))
+		if ((!(((float)L_2) <= ((float)(30.0f)))))
 		{
 			goto IL_0028;
 		}
