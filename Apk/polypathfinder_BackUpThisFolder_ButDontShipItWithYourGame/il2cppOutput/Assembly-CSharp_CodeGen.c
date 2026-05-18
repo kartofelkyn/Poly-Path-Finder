@@ -88,6 +88,8 @@ extern void CharacterSelector_Previous_m576932D0CF6A5635A7007DA2BF0ACDAEDA58C374
 extern void CharacterSelector_ShowCharacter_m698FB5FA9905FF56D01BF1C9F45B6722097DBA17 (void);
 extern void CharacterSelector_Select_m57FE635BF88F27E3637C57D4C3403A95964EAC88 (void);
 extern void CharacterSelector__ctor_m5E5234114A00C4AFC103344D7DCCEBB3A9581E8E (void);
+extern void DeleteObject_OnTriggerEnter_mD6572AE64202712FED365BB10EA7E66E0C54AB28 (void);
+extern void DeleteObject__ctor_m5024F19FAF082233861594EAA5817BDE4F7DFA08 (void);
 extern void GameManager_Awake_m4B6E8E2AF58C95C9A2A0C4637A34AE0892CB637F (void);
 extern void GameManager_Start_m87A71D65F3171A58DBDDBFB03832ADA65643D0E2 (void);
 extern void GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41 (void);
@@ -326,7 +328,6 @@ extern void GamePlaySound_Jump_mE3DF16132ABE81CE7ABE9B205577DDAE7086B3D6 (void);
 extern void GamePlaySound_PlaySound_m1DA7AFB136A7469FA724FAE9CF51E19B8D32E468 (void);
 extern void GamePlaySound__ctor_m24596B01634EE2DC7FB07079FB550AE332D12135 (void);
 extern void TrackMovement_Update_m922696170D79025552DB04C1DF121D9C68BD203F (void);
-extern void TrackMovement_OnTriggerEnter_mC97E512C56A1D36ECDC0F0CEFC23D3E3ED8B56E5 (void);
 extern void TrackMovement__ctor_mB51C50B2AFE04D49B6411CAD2CAEF4793B739232 (void);
 extern void Generic_SimpleRotate_Update_mE9B2BA16C3432326574321BEDB66863CDDACDC97 (void);
 extern void Generic_SimpleRotate__ctor_mF53A9ADD3D667CC46E2A068D2821F1106D03E44A (void);
@@ -689,7 +690,7 @@ extern void Custom2__ctor_m794F85DCC482FCE488839BE3CE54BC7475EBEC71 (void);
 extern void Custom3__ctor_m2038D42BEB71F649E55769FC51DADD0C3C8F3E05 (void);
 extern void ThemedUIElement_OnSkinUI_m5F8675BD888C24EEFA5866E49EF58857AA953115 (void);
 extern void ThemedUIElement__ctor_m7D23CC6D7D66C7EB3556B23AB34921267610E3DA (void);
-static Il2CppMethodPointer s_methodPointers[682] = 
+static Il2CppMethodPointer s_methodPointers[683] = 
 {
 	CharacterRotate_Update_mC2B3BD359C63728C1B50256D0712698FAF2E122B,
 	CharacterRotate__ctor_mD545FDD4D34BBCD62F058AE04BC89AC9B7B62716,
@@ -772,6 +773,8 @@ static Il2CppMethodPointer s_methodPointers[682] =
 	CharacterSelector_ShowCharacter_m698FB5FA9905FF56D01BF1C9F45B6722097DBA17,
 	CharacterSelector_Select_m57FE635BF88F27E3637C57D4C3403A95964EAC88,
 	CharacterSelector__ctor_m5E5234114A00C4AFC103344D7DCCEBB3A9581E8E,
+	DeleteObject_OnTriggerEnter_mD6572AE64202712FED365BB10EA7E66E0C54AB28,
+	DeleteObject__ctor_m5024F19FAF082233861594EAA5817BDE4F7DFA08,
 	GameManager_Awake_m4B6E8E2AF58C95C9A2A0C4637A34AE0892CB637F,
 	GameManager_Start_m87A71D65F3171A58DBDDBFB03832ADA65643D0E2,
 	GameManager_Update_m7F29D8E933B8D21D2E67507979C0F12ACF87BB41,
@@ -1010,7 +1013,6 @@ static Il2CppMethodPointer s_methodPointers[682] =
 	GamePlaySound_PlaySound_m1DA7AFB136A7469FA724FAE9CF51E19B8D32E468,
 	GamePlaySound__ctor_m24596B01634EE2DC7FB07079FB550AE332D12135,
 	TrackMovement_Update_m922696170D79025552DB04C1DF121D9C68BD203F,
-	TrackMovement_OnTriggerEnter_mC97E512C56A1D36ECDC0F0CEFC23D3E3ED8B56E5,
 	TrackMovement__ctor_mB51C50B2AFE04D49B6411CAD2CAEF4793B739232,
 	Generic_SimpleRotate_Update_mE9B2BA16C3432326574321BEDB66863CDDACDC97,
 	Generic_SimpleRotate__ctor_mF53A9ADD3D667CC46E2A068D2821F1106D03E44A,
@@ -1374,7 +1376,7 @@ static Il2CppMethodPointer s_methodPointers[682] =
 	ThemedUIElement_OnSkinUI_m5F8675BD888C24EEFA5866E49EF58857AA953115,
 	ThemedUIElement__ctor_m7D23CC6D7D66C7EB3556B23AB34921267610E3DA,
 };
-static const int32_t s_InvokerIndices[682] = 
+static const int32_t s_InvokerIndices[683] = 
 {
 	15042,
 	15042,
@@ -1456,6 +1458,8 @@ static const int32_t s_InvokerIndices[682] =
 	15042,
 	11402,
 	15042,
+	15042,
+	11466,
 	15042,
 	15042,
 	15042,
@@ -1695,7 +1699,6 @@ static const int32_t s_InvokerIndices[682] =
 	11466,
 	15042,
 	15042,
-	11466,
 	15042,
 	15042,
 	15042,
@@ -2063,7 +2066,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	682,
+	683,
 	s_methodPointers,
 	0,
 	NULL,

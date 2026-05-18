@@ -941,7 +941,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0__ctor_m0144C639
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84201
+// Method Definition Index: 84202
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03* NativeFilePicker_get_AJC_m1C82F9B9E552D918E468F6C1ECCCFFA0455F5EEF (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -975,7 +975,7 @@ IL_0016:
 		return L_2;
 	}
 }
-// Method Definition Index: 84202
+// Method Definition Index: 84203
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NativeFilePicker_get_Context_m793107E9B17DD8CEA97B2883EFB04CD9E04AF60D (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1054,7 +1054,7 @@ IL_002e:
 		return L_6;
 	}
 }
-// Method Definition Index: 84203
+// Method Definition Index: 84204
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NativeFilePicker_get_SelectedFilePath_mA4D23B13BB621FEFC506B158E827F9A425EAB86E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1098,7 +1098,7 @@ IL_0026:
 		return L_5;
 	}
 }
-// Method Definition Index: 84204
+// Method Definition Index: 84205
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CheckPermission_mA503FE04D0E4F118E3B3A39F163DA59E45E74999 (bool ___0_readPermissionOnly, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1133,7 +1133,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CheckPermission_mA503FE
 		return (bool)((((int32_t)L_8) == ((int32_t)1))? 1 : 0);
 	}
 }
-// Method Definition Index: 84205
+// Method Definition Index: 84206
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_RequestPermissionAsync_m0A17ACEB29BEC46EFD9289EAC7EF24D8FB598633 (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* ___0_callback, bool ___1_readPermissionOnly, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1179,7 +1179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_RequestPermissionAsync_
 		return;
 	}
 }
-// Method Definition Index: 84206
+// Method Definition Index: 84207
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t262C20356081CCC67A37DF3C0409D331E3E1D885* NativeFilePicker_RequestPermissionAsync_m76FFABB0FD9C07BF6D41C3748D4D7EF61499920B (bool ___0_readPermissionOnly, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1218,7 +1218,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t262C20356081CCC67A37DF3C0409D331E3E1D
 		return L_7;
 	}
 }
-// Method Definition Index: 84207
+// Method Definition Index: 84208
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_OpenSettings_mAE9DC3DF0D8ECDD36BEBCA55CC4319695FA6AC2E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1245,7 +1245,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_OpenSettings_mAE9DC3DF0
 		return;
 	}
 }
-// Method Definition Index: 84208
+// Method Definition Index: 84209
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanPickMultipleFiles_m206788E893263B7B8586F5E00E3D3626EB0354FB (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1268,7 +1268,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanPickMultipleFiles_m2
 		return L_2;
 	}
 }
-// Method Definition Index: 84209
+// Method Definition Index: 84210
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanExportFiles_mA687449FB6B1EB553522DA88DABAC843B31AE980 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1291,7 +1291,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanExportFiles_mA687449
 		return L_2;
 	}
 }
-// Method Definition Index: 84210
+// Method Definition Index: 84211
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanExportMultipleFiles_mEAF4A6057A83982D647A7C5396823D97CFE75C9B (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1314,7 +1314,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_CanExportMultipleFiles_
 		return L_2;
 	}
 }
-// Method Definition Index: 84211
+// Method Definition Index: 84212
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_IsFilePickerBusy_mB5A7E1D2367DDD7E2397B8E29E3D589BF996B85D (const RuntimeMethod* method) 
 {
 	{
@@ -1322,7 +1322,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NativeFilePicker_IsFilePickerBusy_mB5A7E
 		return (bool)0;
 	}
 }
-// Method Definition Index: 84212
+// Method Definition Index: 84213
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* NativeFilePicker_ConvertExtensionToFileType_m8309B8A700A58E84AA581610A31AD71EC13868EB (String_t* ___0_extension, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1387,7 +1387,7 @@ IL_0020:
 		return L_10;
 	}
 }
-// Method Definition Index: 84213
+// Method Definition Index: 84214
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_PickFile_m4DBDF074BE2DA301060F910C1984E92B37862878 (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* ___0_callback, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_allowedFileTypes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1523,7 +1523,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 84214
+// Method Definition Index: 84215
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_PickMultipleFiles_mF17C87966F90E11E06362C9A7BC54CD71B838662 (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* ___0_callback, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_allowedFileTypes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1614,7 +1614,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 84215
+// Method Definition Index: 84216
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_ExportFile_m426ED517F9F32AF7F76C697A9E526930AE982550 (String_t* ___0_filePath, FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* ___1_callback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1719,7 +1719,7 @@ IL_002b:
 		return;
 	}
 }
-// Method Definition Index: 84216
+// Method Definition Index: 84217
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeFilePicker_ExportMultipleFiles_m30A16BADBC718548A293BFF9194A9969ADF7EF34 (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_filePaths, FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* ___1_callback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1864,7 +1864,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_PermissionCallback_t5AFD0CA1795CD8E
 	il2cppPInvokeFunc(___0_permission);
 
 }
-// Method Definition Index: 84217
+// Method Definition Index: 84218
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallback__ctor_mFFE3E172817EB89591780E6B9B31CD24778370EE (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1893,13 +1893,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallback__ctor_mFFE3E172817EB8
 	}
 	__this->___extra_arg = (intptr_t)&PermissionCallback_Invoke_m44F42C5FBA56836948249B7184FF020A8D73C386_Multicast;
 }
-// Method Definition Index: 84218
+// Method Definition Index: 84219
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallback_Invoke_m44F42C5FBA56836948249B7184FF020A8D73C386 (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, int32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_permission, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84219
+// Method Definition Index: 84220
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PermissionCallback_BeginInvoke_m07822A9D611515665D63C7DCB58A19EBFE953F8B (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* __this, int32_t ___0_permission, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1912,7 +1912,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PermissionCallback_BeginInvoke
 	__d_args[0] = Box(Permission_t0082A6A8B788B8C0B0633A4500A53D9FD5E04BB0_il2cpp_TypeInfo_var, &___0_permission);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 84220
+// Method Definition Index: 84221
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallback_EndInvoke_mD22A4E0191FA6FA2D36A51F150717B5CA6DB525E (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1960,7 +1960,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_FilePickedCallback_tD2661633E428329
 	____0_path_marshaled = NULL;
 
 }
-// Method Definition Index: 84221
+// Method Definition Index: 84222
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilePickedCallback__ctor_mDC0CE5F123DC76DE666C1B5522DA389A2EC6D601 (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1997,20 +1997,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilePickedCallback__ctor_mDC0CE5F123DC76
 	}
 	__this->___extra_arg = (intptr_t)&FilePickedCallback_Invoke_m0180E7EF84B4AD7032008716E629B80E51383FFC_Multicast;
 }
-// Method Definition Index: 84222
+// Method Definition Index: 84223
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilePickedCallback_Invoke_m0180E7EF84B4AD7032008716E629B80E51383FFC (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_path, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84223
+// Method Definition Index: 84224
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FilePickedCallback_BeginInvoke_mF092ECA41A3F9C481C115E9856DBD1B091E97B71 (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* __this, String_t* ___0_path, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_path;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 84224
+// Method Definition Index: 84225
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilePickedCallback_EndInvoke_m5BD5B3C5480F94EB69F5E11681A44851394F22C9 (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2080,7 +2080,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_MultipleFilesPickedCallback_t870958
 	}
 
 }
-// Method Definition Index: 84225
+// Method Definition Index: 84226
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MultipleFilesPickedCallback__ctor_mE68919290D29BF03E91DFDAD70C3A6E34B6DF685 (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2117,20 +2117,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MultipleFilesPickedCallback__ctor_mE6891
 	}
 	__this->___extra_arg = (intptr_t)&MultipleFilesPickedCallback_Invoke_m5F2C10ABED9853F26F00282AD3799988E4266B7F_Multicast;
 }
-// Method Definition Index: 84226
+// Method Definition Index: 84227
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MultipleFilesPickedCallback_Invoke_m5F2C10ABED9853F26F00282AD3799988E4266B7F (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_paths, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_paths, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84227
+// Method Definition Index: 84228
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MultipleFilesPickedCallback_BeginInvoke_m0537C4EDA9A2DAC49CEFC14E677CF0E883F4FC4C (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_paths, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_paths;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 84228
+// Method Definition Index: 84229
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MultipleFilesPickedCallback_EndInvoke_mCA35D73F6DD240722E3042A6460A55991A0A9227 (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2171,7 +2171,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_FilesExportedCallback_t0F578D490150
 	il2cppPInvokeFunc(static_cast<int32_t>(___0_success));
 
 }
-// Method Definition Index: 84229
+// Method Definition Index: 84230
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilesExportedCallback__ctor_mE7DA398D9EF76E94F9A7EEF90FADC72160CB940A (FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2200,20 +2200,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilesExportedCallback__ctor_mE7DA398D9EF
 	}
 	__this->___extra_arg = (intptr_t)&FilesExportedCallback_Invoke_m03C754BB4D3F455D5C9F615D6B3FFEEB25415E4F_Multicast;
 }
-// Method Definition Index: 84230
+// Method Definition Index: 84231
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilesExportedCallback_Invoke_m03C754BB4D3F455D5C9F615D6B3FFEEB25415E4F (FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* __this, bool ___0_success, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_success, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84231
+// Method Definition Index: 84232
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FilesExportedCallback_BeginInvoke_mB4379686AAC2F8D3D8573075E62998569EF72724 (FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* __this, bool ___0_success, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.boolean_class, &___0_success);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 84232
+// Method Definition Index: 84233
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilesExportedCallback_EndInvoke_mB5197203B13FBA8E7AE7B095FFA2481CB7F58E60 (FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2234,7 +2234,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FilesExportedCallback_EndInvoke_mB519720
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84233
+// Method Definition Index: 84234
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m73AB357ECE8ED02DBDFFAD067377B4D9A09529FA (U3CU3Ec__DisplayClass16_0_t6D79D809DD58A868AE04362509F6CA40B3148E6A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2242,7 +2242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m73AB357
 		return;
 	}
 }
-// Method Definition Index: 84234
+// Method Definition Index: 84235
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0_U3CRequestPermissionAsyncU3Eb__0_mD933057E3C979D3EE8EE7BB61A857186FBA40A62 (U3CU3Ec__DisplayClass16_0_t6D79D809DD58A868AE04362509F6CA40B3148E6A* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2268,7 +2268,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0_U3CRequestPerm
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84235
+// Method Definition Index: 84236
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass23_0__ctor_mEE03DF8FE743D868DE42649F1138B782066EA5DE (U3CU3Ec__DisplayClass23_0_t796FDD6F12CA28580006C8ABB2A9F847BA6F82E3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2276,7 +2276,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass23_0__ctor_mEE03DF8
 		return;
 	}
 }
-// Method Definition Index: 84236
+// Method Definition Index: 84237
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass23_0_U3CPickFileU3Eb__0_mA84352D0D5F3B6ABA6F816DC96B020B4881304CB (U3CU3Ec__DisplayClass23_0_t796FDD6F12CA28580006C8ABB2A9F847BA6F82E3* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2385,7 +2385,7 @@ IL_001d:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84237
+// Method Definition Index: 84238
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass24_0__ctor_mE43B42990B4C1D5923EB9DBDEA5E8C76CB8F2282 (U3CU3Ec__DisplayClass24_0_t5CD9674734E11204128BACBD0FB9A96E54614775* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2393,7 +2393,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass24_0__ctor_mE43B429
 		return;
 	}
 }
-// Method Definition Index: 84238
+// Method Definition Index: 84239
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass24_0_U3CPickMultipleFilesU3Eb__0_m9107EB2C748A769DD2AC9C6E5EAF237D244DEC4D (U3CU3Ec__DisplayClass24_0_t5CD9674734E11204128BACBD0FB9A96E54614775* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2532,7 +2532,7 @@ IL_0088:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84239
+// Method Definition Index: 84240
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0__ctor_mE4B07B99D880C54E3141F290202A4BDCE2723912 (U3CU3Ec__DisplayClass25_0_tE67F73AD2F9336D715C52F0B6C68504D7E91C891* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2540,7 +2540,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0__ctor_mE4B07B9
 		return;
 	}
 }
-// Method Definition Index: 84240
+// Method Definition Index: 84241
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0_U3CExportFileU3Eb__0_m2EFCC82049D30A258BE9B6899CF547A866FD5251 (U3CU3Ec__DisplayClass25_0_tE67F73AD2F9336D715C52F0B6C68504D7E91C891* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2673,7 +2673,7 @@ IL_0081:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84241
+// Method Definition Index: 84242
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass26_0__ctor_m69EFC160E2CBAF4843CAC0B27C1F777506E57C1E (U3CU3Ec__DisplayClass26_0_tB4E1AE581895BE7A57B1A222424C5A1B8A76AEC3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2681,7 +2681,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass26_0__ctor_m69EFC16
 		return;
 	}
 }
-// Method Definition Index: 84242
+// Method Definition Index: 84243
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass26_0_U3CExportMultipleFilesU3Eb__0_mCDBE9DEB84346762785BB88D08496805690738DB (U3CU3Ec__DisplayClass26_0_tB4E1AE581895BE7A57B1A222424C5A1B8A76AEC3* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2811,7 +2811,7 @@ IL_007f:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84243
+// Method Definition Index: 84244
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t46FDEBF28D83F78974AF889299F258D847C0B6AC UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mF37082151D697DC788C255B071E7A34D9B6D061A (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2845,7 +2845,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t46FDEBF28D83F78974AF889299F25
 		return L_6;
 	}
 }
-// Method Definition Index: 84244
+// Method Definition Index: 84245
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m3D0B8B4C00B785374799D68743865E05028A8F51 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t14EAA43DAF3BCABAE96F79C64A7AF935E4372C06* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2931,7 +2931,7 @@ IL2CPP_EXTERN_C void MonoScriptData_t46FDEBF28D83F78974AF889299F258D847C0B6AC_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84245
+// Method Definition Index: 84246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FPCallbackHelper_tEE680C0CAE77C38AFC0AFF00328B1D02CAC42FFF* FPCallbackHelper_Create_mD86B3542CFB109FD9FA2DD3A216A2752E8C82ECF (bool ___0_autoDestroyWithCallback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2966,7 +2966,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FPCallbackHelper_tEE680C0CAE77C38AFC0AFF00328
 		return L_4;
 	}
 }
-// Method Definition Index: 84246
+// Method Definition Index: 84247
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPCallbackHelper_CallOnMainThread_m36117C8F9D8FC012F8231179F5511144B39B63D6 (FPCallbackHelper_tEE680C0CAE77C38AFC0AFF00328B1D02CAC42FFF* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_function, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3032,7 +3032,7 @@ IL_002f:
 		return;
 	}
 }
-// Method Definition Index: 84247
+// Method Definition Index: 84248
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPCallbackHelper_Update_mAA33ACE8AA8668D87C38682C48B220293801C08F (FPCallbackHelper_tEE680C0CAE77C38AFC0AFF00328B1D02CAC42FFF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3153,7 +3153,7 @@ IL_004a:
 		return;
 	}
 }
-// Method Definition Index: 84248
+// Method Definition Index: 84249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPCallbackHelper__ctor_m25D058AF935846A5C213FABE6B94E087E4907F70 (FPCallbackHelper_tEE680C0CAE77C38AFC0AFF00328B1D02CAC42FFF* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3169,7 +3169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPCallbackHelper__ctor_m25D058AF935846A5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84249
+// Method Definition Index: 84250
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPPermissionCallbackAndroid__ctor_m63C21B03FF6CA154844AAA51119043F8A248247E (FPPermissionCallbackAndroid_t31A684D0D11844BFCA5EC42B8923A9C684C54876* __this, PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* ___0_callback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3196,7 +3196,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPPermissionCallbackAndroid__ctor_m63C21
 		return;
 	}
 }
-// Method Definition Index: 84250
+// Method Definition Index: 84251
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPPermissionCallbackAndroid_OnPermissionResult_m1797D88E285D814975CFFE7D3DC47C300864F06A (FPPermissionCallbackAndroid_t31A684D0D11844BFCA5EC42B8923A9C684C54876* __this, int32_t ___0_result, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3239,7 +3239,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPPermissionCallbackAndroid_OnPermission
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84251
+// Method Definition Index: 84252
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0__ctor_mAE2A148C19D6499209764511F97E2EBDA84402D3 (U3CU3Ec__DisplayClass3_0_t59371049D8A94F0996E2C11FD159EE83083095DB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3247,7 +3247,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0__ctor_mAE2A148C
 		return;
 	}
 }
-// Method Definition Index: 84252
+// Method Definition Index: 84253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0_U3COnPermissionResultU3Eb__0_mB4F96051203E9F850F573A1A36774AC07E11D4B0 (U3CU3Ec__DisplayClass3_0_t59371049D8A94F0996E2C11FD159EE83083095DB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3269,7 +3269,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass3_0_U3COnPermission
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84253
+// Method Definition Index: 84254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid__ctor_m8264F5CE7BBD6F4C3CACD85DBE9DAF713E8D7019 (FPResultCallbackAndroid_t8B6FAA7402D9E839C5C3DCE1B627FE8C4C928FD7* __this, FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* ___0_pickCallback, MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* ___1_pickCallbackMultiple, FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* ___2_exportCallback, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3304,7 +3304,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid__ctor_m8264F5CE7
 		return;
 	}
 }
-// Method Definition Index: 84254
+// Method Definition Index: 84255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid_OnFilePicked_mC0035285EACA29579D4D6F99213B26C33B4A68D4 (FPResultCallbackAndroid_t8B6FAA7402D9E839C5C3DCE1B627FE8C4C928FD7* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3340,7 +3340,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid_OnFilePicked_mC0
 		return;
 	}
 }
-// Method Definition Index: 84255
+// Method Definition Index: 84256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid_OnMultipleFilesPicked_m74E4FE3C13B4957F09F8D8A08DA1B32678C1F70D (FPResultCallbackAndroid_t8B6FAA7402D9E839C5C3DCE1B627FE8C4C928FD7* __this, String_t* ___0_paths, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3549,7 +3549,7 @@ IL_0096:
 		return;
 	}
 }
-// Method Definition Index: 84256
+// Method Definition Index: 84257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid_OnFilesExported_m1B52622D6D9C19805804A6D379B673E049888579 (FPResultCallbackAndroid_t8B6FAA7402D9E839C5C3DCE1B627FE8C4C928FD7* __this, bool ___0_result, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3592,7 +3592,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FPResultCallbackAndroid_OnFilesExported_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84257
+// Method Definition Index: 84258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass5_0__ctor_mDAC26F19AF30F3A725E38B0FD13DADCB323870A8 (U3CU3Ec__DisplayClass5_0_t199EB4C5241658D733DE951FEC4175EAB4FDA281* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3600,7 +3600,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass5_0__ctor_mDAC26F19
 		return;
 	}
 }
-// Method Definition Index: 84258
+// Method Definition Index: 84259
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass5_0_U3COnFilePickedU3Eb__0_mD20A2DB3A6BC950C76957269FA5354BC95812792 (U3CU3Ec__DisplayClass5_0_t199EB4C5241658D733DE951FEC4175EAB4FDA281* __this, const RuntimeMethod* method) 
 {
 	FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* G_B2_0 = NULL;
@@ -3650,7 +3650,7 @@ IL_0021:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84259
+// Method Definition Index: 84260
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass6_0__ctor_mC9B5044E8A373203D856E97D470E30AE9164B274 (U3CU3Ec__DisplayClass6_0_t3106BC298E299132C4A71FE8936BA4788F308F06* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3658,7 +3658,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass6_0__ctor_mC9B5044E
 		return;
 	}
 }
-// Method Definition Index: 84260
+// Method Definition Index: 84261
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass6_0_U3COnMultipleFilesPickedU3Eb__0_m030D7D65A432030A3E3A696946518B7C8842F6C4 (U3CU3Ec__DisplayClass6_0_t3106BC298E299132C4A71FE8936BA4788F308F06* __this, const RuntimeMethod* method) 
 {
 	MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* G_B2_0 = NULL;
@@ -3719,7 +3719,7 @@ IL_0025:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 84261
+// Method Definition Index: 84262
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0__ctor_m0144C6392CE093DF03DD1974021529E79A935BB1 (U3CU3Ec__DisplayClass7_0_tA164A1CDFC9B3151F9E2F6186CE7F702618A0E01* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3727,7 +3727,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0__ctor_m0144C639
 		return;
 	}
 }
-// Method Definition Index: 84262
+// Method Definition Index: 84263
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0_U3COnFilesExportedU3Eb__0_mFDE81E4D7F3F270B040A97CC1F03F478445FFA7F (U3CU3Ec__DisplayClass7_0_tA164A1CDFC9B3151F9E2F6186CE7F702618A0E01* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3768,19 +3768,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0_U3COnFilesExpor
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 84222
+// Method Definition Index: 84223
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FilePickedCallback_Invoke_m0180E7EF84B4AD7032008716E629B80E51383FFC_inline (FilePickedCallback_tD2661633E4283291D7B1FCC6EE9516C4BE3F2239* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_path, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84226
+// Method Definition Index: 84227
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MultipleFilesPickedCallback_Invoke_m5F2C10ABED9853F26F00282AD3799988E4266B7F_inline (MultipleFilesPickedCallback_t870958BD21A68D7D466C1483CC80788D72ECE453* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_paths, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_paths, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84230
+// Method Definition Index: 84231
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FilesExportedCallback_Invoke_m03C754BB4D3F455D5C9F615D6B3FFEEB25415E4F_inline (FilesExportedCallback_t0F578D4901501C874FF45D8A580B48E4B96B5C92* __this, bool ___0_success, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, bool, const RuntimeMethod*);
@@ -3792,7 +3792,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 84218
+// Method Definition Index: 84219
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PermissionCallback_Invoke_m44F42C5FBA56836948249B7184FF020A8D73C386_inline (PermissionCallback_t5AFD0CA1795CD8ECA8C55C12D3C42CA5631BF181* __this, int32_t ___0_permission, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, int32_t, const RuntimeMethod*);
