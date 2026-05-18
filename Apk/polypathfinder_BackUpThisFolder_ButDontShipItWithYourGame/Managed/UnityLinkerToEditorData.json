@@ -1059,7 +1059,8 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/GamePlay.unity"
+              "Assets/Scenes/GamePlay.unity",
+              "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1074,7 +1075,8 @@
             "name": "MeshCollider",
             "scenes": [
               "Assets/Scenes/GamePlay.unity",
-              "Assets/Scenes/LoadingScreen.unity"
+              "Assets/Scenes/LoadingScreen.unity",
+              "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
             "icon": null

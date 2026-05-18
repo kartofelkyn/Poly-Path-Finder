@@ -1,0 +1,39 @@
+4a9b688f - kartofelkyn (2026-05-18): Added downward movement, start tutorial, and track adjustments
+757a91d6 - kartofelkyn (2026-05-18): Merge remote-tracking branch 'origin/track-gab' into main-merge-test
+ae3671e5 - kartofelkyn (2026-05-18): Merge branch 'track-environment' into main-merge-test
+3003fd5d - kartofelkyn (2026-05-18): Created new track assets
+f458a823 - kartofelkyn (2026-05-17): Added post-answer quiz feedback and new character assets
+275479cf - kartofelkyn (2026-05-17): Added summary for each script files
+6b8fb1f3 - Gab (2026-05-14): Gab Tracks_Desert
+a547796d - kartofelkyn (2026-05-14): Created personal assets
+a41cc137 - kartofelkyn (2026-05-12): refactor: improve code formatting and add summaries for LoadingScreen, MainMenu, and DifficultySelection scripts
+d24c3902 - kartofelkyn (2026-05-08): Created new apk file
+5f9af42f - kartofelkyn (2026-05-08): Fix game over logic and side jump quiz collision issue
+866085d8 - kartofelkyn (2026-05-08): Created new apk file
+25281812 - kartofelkyn (2026-05-08): Created new apk file
+58ccd051 - kartofelkyn (2026-05-08): Fix sound settings manager and add powerups with UI popups
+a5675471 - kartofelkyn (2026-05-07): UI improvements, bug fixes, and gameplay polish
+7881e5d6 - Ma. Geleen Catchillar (2026-05-06): Desert Track
+ddd5beab - Gab (2026-05-06): Tracks_Gab-Juls
+852a0ae2 - kartofelkyn (2026-05-06): Update packages-lock.json
+8116a5c0 - kartofelkyn (2026-05-06): Update packages-lock.json
+ab852eb9 - kartofelkyn (2026-05-06): Update packages-lock.json
+c79c27ed - kartofelkyn (2026-05-06): Added button animation
+776f4af9 - kartofelkyn (2026-05-06): Minor name change
+e40e112d - kartofelkyn (2026-05-06): Created character selection
+8aeaf200 - kartofelkyn (2026-05-05): Add quiz API integration, player movement improvements, and audio/UX enhancements
+56563ec1 - Ma. Geleen Catchillar (2026-05-05): Winter Track
+d6ce4fcc - kartofelkyn (2026-04-23): Week 3: Gameplay Expansion & System Decoupling
+cffdfad7 - kartofelkyn (2026-04-16): Week 2: 50% system completion (core gameplay + UI foundation)
+5db69032 - kartofelkyn (2026-04-10): Added Pause/Resume Functionality, and Win Condition
+117492c5 - kartofelkyn (2026-04-05): Implemented Game Over Screen
+802d930d - kartofelkyn (2026-04-04): Made frontend responsive and created Difficulty and Main Menu Screen
+bf55fe32 - kartofelkyn (2026-03-31): Imported Fredorika and Funny Fan fonts as TextMeshPro assets.
+6b7b7fa5 - kartofelkyn (2026-03-28): Merge branch 'gameplay-screen'
+70ecbd30 - kartofelkyn (2026-03-28): update Unity Editor to 6.3.12 from 6.3.11
+6f3ec324 - kartofelkyn (2026-03-27): Reapply "Update .gitignore"
+28a72204 - kartofelkyn (2026-03-27): Revert "Update .gitignore"
+825d34aa - Gab (2026-03-27): Update .gitignore
+f2699f2f - kartofelkyn (2026-03-27): Week 1 Prototype: Endless Runner, Movement and Quiz System
+2df04293 - kartofelkyn (2026-03-22): Enhance README with detailed game description
+8e1eaccf - kartofelkyn (2026-03-22): Initial commit
