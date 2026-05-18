@@ -12520,7 +12520,7 @@ MonoBehaviour:
   lives: 15
   scoreAdd: 100
   streakNumber: 0
-  streakAddition: 50
+  streakAddition: 5
   currentSpeed: 2
   maxSpeed: 50
   speedIncreaseRate: 0.1
