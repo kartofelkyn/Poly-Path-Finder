@@ -44,6 +44,12 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float tiltSpeed = 10f;
     [SerializeField] float forwardTilt = 10f;
 
+    [Header("Fast Drop")]
+    [SerializeField] float fastDropSpeed = 18f;
+    [SerializeField] bool isFastDropping = false;
+    private float fastDropTimer = 0f;
+    private float startY;
+
     [Header("Camera")]
     [SerializeField] Transform mainCamera;
     [SerializeField] float introCameraSpeedY = 1f;
@@ -159,6 +165,20 @@ public class PlayerMove : MonoBehaviour
         Jump();
     }
 
+    public void QueueDown()
+    {
+        if (GameManager.Instance.state != GameState.Playing) return;
+
+        if (!isAirJumping) return;
+
+        isFastDropping = true;
+        fastDropTimer = 0f;
+        startY = transform.position.y;
+        isAirJumping = false;
+        airJumpTimer = 0f;
+        Debug.Log("Queueing drop");
+    }
+
     // MOVEMENT
     void MovePlayer()
     {
@@ -213,6 +233,28 @@ public class PlayerMove : MonoBehaviour
     {
         float yOffset = 0f;
 
+        if (isFastDropping)
+        {
+            Debug.Log("Fast dropping");
+            float dropSpeed = fastDropSpeed;
+
+            Vector3 pos = transform.position;
+            pos.y -= dropSpeed * Time.deltaTime;
+
+            if (pos.y <= baseY)
+            {
+                pos.y = baseY;
+
+                isFastDropping = false;
+                isAirJumping = false;
+                isGrounded = true;
+                airJumpTimer = 0f;
+            }
+
+            transform.position = pos;
+            return;
+        }
+
         // RUNNING BOUNCE
         float runBounce = Mathf.Abs(Mathf.Sin(timeCounter * runBounceSpeed)) * runBounceHeight;
         yOffset += runBounce;
@@ -220,8 +262,8 @@ public class PlayerMove : MonoBehaviour
         // REAL JUMP
         if (isAirJumping)
         {
-
             airJumpTimer += Time.deltaTime;
+
             float progress = airJumpTimer / jumpDuration;
 
             if (progress >= 1f)
@@ -231,7 +273,20 @@ public class PlayerMove : MonoBehaviour
                 isGrounded = true;
             }
 
-            yOffset += Mathf.Sin(progress * Mathf.PI) * jumpHeight;
+            float smoothProgress = Mathf.SmoothStep(0f, 1f, progress);
+
+            float jumpCurve;
+
+            if (smoothProgress < 0.5f)
+            {
+                jumpCurve = Mathf.Lerp(0f, jumpHeight, smoothProgress * 2f);
+            }
+            else
+            {
+                jumpCurve = Mathf.Lerp(jumpHeight, 0f, (smoothProgress - 0.5f) * 2f);
+            }
+
+            yOffset += jumpCurve;
         }
 
         // LANE BOUNCE

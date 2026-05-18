@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1926928798061842715}
   m_Layer: 0
   m_Name: New_Section_Trigger
-  m_TagString: Trigger
+  m_TagString: SectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,6 @@ GameObject:
   - component: {fileID: 2221198772811453559}
   - component: {fileID: 1453026062687948764}
   - component: {fileID: 2463919015882692442}
-  - component: {fileID: 144954456406820985}
   m_Layer: 0
   m_Name: Winter Track
   m_TagString: Untagged
@@ -192,8 +191,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3632798180535146761}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 21.90252, y: 0, z: 66.23334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -213,7 +212,7 @@ Transform:
   - {fileID: 6022141502429903193}
   - {fileID: 6660428691602314449}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1453026062687948764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -247,33 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd341fe0bb36d842a238369c2e43518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackMovement
---- !u!54 &144954456406820985
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3632798180535146761}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4345952950326163619
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,24 +479,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 2221198772811453559}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.815589
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalScale.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.2
+      value: 2.2233944
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.4571
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32
+      value: 31.958
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: edc7dcd7cf4465e438cefd564f1de44d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -582,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48f0aa790e68cac4e9b23a2f12085028, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.58
+      value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 48f0aa790e68cac4e9b23a2f12085028, type: 3}
       propertyPath: m_LocalPosition.z
@@ -644,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 75be77989de7d0843bc0c1eadca68e79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 75be77989de7d0843bc0c1eadca68e79, type: 3}
       propertyPath: m_LocalPosition.z

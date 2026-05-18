@@ -40,6 +40,7 @@ public class QuizManager : MonoBehaviour
     private List<Quiz> aiQuizzes;
     private bool useAIMode = false;
     public bool isInitialized = false;
+    public GameObject tutorialPanel;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -52,6 +53,8 @@ public class QuizManager : MonoBehaviour
     }
     void Start()
     {
+        StartCoroutine(ShowTutorial());
+
         if (LevelSelection.useAI)
         {
             useAIMode = true;
@@ -126,7 +129,6 @@ public class QuizManager : MonoBehaviour
     {
         // Wait until the quiz is initialized before proceeding
         yield return new WaitUntil(() => isInitialized);
-
         // Check if there are quizzes available before trying to spawn the next one to avoid errors
         if (shuffledQuizzes == null || shuffledQuizzes.Count == 0)
         {
@@ -203,5 +205,17 @@ public class QuizManager : MonoBehaviour
         );
 
         //Debug.Log("Spawned trigger: " + spawnedTrigger.name);
+    }
+    private IEnumerator ShowTutorial()
+    {
+        tutorialPanel.SetActive(false);
+
+        yield return new WaitForSeconds(6f);
+
+        tutorialPanel.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        tutorialPanel.SetActive(false);
     }
 }

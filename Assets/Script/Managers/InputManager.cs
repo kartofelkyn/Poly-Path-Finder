@@ -93,6 +93,7 @@ public class InputManager : MonoBehaviour
         else
         {
             if (delta.y > 0) player.QueueJump(); // delta.y > 0 indicates a swipe upwards, since the vertical component is greater than the horizontal component, it queues a jump for the player
+            else player.QueueDown();
         }
     }
 

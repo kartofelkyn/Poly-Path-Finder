@@ -22,7 +22,7 @@ public class SectionTrigger : MonoBehaviour
         // position of the trigger + a new Vector of x, y, z to spawn the track in the right position
         if(other.gameObject.CompareTag("StartTrack"))
         {
-            Vector3 spawnPos = other.transform.position + new Vector3(1, -2, 29f);
+            Vector3 spawnPos = other.transform.position + new Vector3(1, -2, 30.11f);
             Instantiate(TrackManager.Instance.GetRandomTrackSection(), spawnPos, Quaternion.identity);
         }
         else if (other.gameObject.CompareTag("SectionTrigger"))

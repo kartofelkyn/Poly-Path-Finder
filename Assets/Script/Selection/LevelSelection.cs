@@ -24,8 +24,7 @@ public class LevelSelection : MonoBehaviour
     public void SetEasy()
     {
         if (clickSound != null)
-            //Note: Need palitang ng AudioManager.Instance.PlaySFX(clickSound); pag nagawa na
-            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+            AudioManager.Instance.PlaySFX(clickSound);
 
         SelectedDifficulty = "Easy";
         useAI = false;
@@ -35,7 +34,7 @@ public class LevelSelection : MonoBehaviour
     public void SetMedium()
     {
         if (clickSound != null)
-            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+            AudioManager.Instance.PlaySFX(clickSound);
 
         SelectedDifficulty = "Medium";
         useAI = false;
@@ -45,7 +44,7 @@ public class LevelSelection : MonoBehaviour
     public void SetHard()
     {
         if (clickSound != null)
-            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+            AudioManager.Instance.PlaySFX(clickSound);
 
         SelectedDifficulty = "Hard";
         useAI = false;
@@ -56,7 +55,7 @@ public class LevelSelection : MonoBehaviour
     public void goBack()
     {
         if (clickSound != null)
-            AudioSource.PlayClipAtPoint(clickSound, Camera.main.transform.position);
+            AudioManager.Instance.PlaySFX(clickSound);
         StartCoroutine(SwitchScene("MainMenu"));
     }
     IEnumerator SwitchScene(string sceneName)
