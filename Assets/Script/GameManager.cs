@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lives = 8;
+            lives = 50;
             score = 0;
             scoreAdd = 0;
-            speedIncreaseRate = 0f;
+            speedIncreaseRate = 0.2f;
             difficultyText.text = "Easy";
         }
         // Start the footstep sounds when the game starts

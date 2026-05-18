@@ -43,12 +43,12 @@ public class PowerUPSpawner : MonoBehaviour
 
         float chance = Random.Range(0f, 101f);
 
-        if (chance <= 5f)
+        if (chance <= 10f)
         {
             randomNumber = 2;
         }
 
-        else if (chance <= 35f)
+        else if (chance <= 30f)
         {
             randomNumber = 1;
         }
